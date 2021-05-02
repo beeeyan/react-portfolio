@@ -12,15 +12,22 @@ const initPosition = {
   y: 0,
 };
 
+const edgePosition = {
+  x: 200,
+  y: 200,
+};
+
 /**
  * HTML要素を動かせるようにする
  * 返り値で取得できるinteractRefと、interactStyleをそれぞれ対象となるHTML要素の
  * refとstyleに指定することで、そのHTML要素のリサイズと移動が可能になる
  * @param {Partial} position - HTML要素の初期座標と大きさ、指定されない場合はinitPositionで指定された値になる。
+ * @param {Required} edge - 端のposition
  * @return {interactRef}
  */
 export function useInteractJS(
     position: Partial<typeof initPosition> = initPosition,
+    edge: Required<typeof edgePosition> = edgePosition,
 ) {
   const [_position, setPosition] = useState({
     ...initPosition,
@@ -46,25 +53,27 @@ export function useInteractJS(
         .on('dragmove', (event) => {
           x += event.dx;
           y += event.dy;
+          x = x >= edge.x? edge.x : x;
+          y = y >= edge.y? edge.y : y;
           setPosition({
             width,
             height,
             x,
             y,
-          });
-        })
-        .on('resizemove', (event) =>{
-          width = event.rect.width;
-          height = event.rect.height;
-          x += event.deltaRect.left;
-          y += event.deltaRect.top;
-          setPosition({
-            x,
-            y,
-            width,
-            height,
           });
         });
+    // .on('resizemove', (event) =>{
+    //   width = event.rect.width;
+    //   height = event.rect.height;
+    //   x += event.deltaRect.left;
+    //   y += event.deltaRect.top;
+    //   setPosition({
+    //     x,
+    //     y,
+    //     width,
+    //     height,
+    //   });
+    // });
   };
 
   const disable = () => {
