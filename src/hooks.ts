@@ -13,8 +13,10 @@ const initPosition = {
 };
 
 const edgePosition = {
-  x: 200,
-  y: 200,
+  maxX: 200,
+  maxY: 200,
+  minX: 0,
+  minY: 0,
 };
 
 /**
@@ -53,8 +55,12 @@ export function useInteractJS(
         .on('dragmove', (event) => {
           x += event.dx;
           y += event.dy;
-          x = x >= edge.x? edge.x : x;
-          y = y >= edge.y? edge.y : y;
+          // confirm max position
+          x = x >= edge.maxX? edge.maxX : x;
+          y = y >= edge.maxY? edge.maxY : y;
+          // confirm min position
+          x = x <= edge.minX? edge.minX : x;
+          y = y <= edge.minY? edge.minY : y;
           setPosition({
             width,
             height,
