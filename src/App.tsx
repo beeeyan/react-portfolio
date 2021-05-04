@@ -3,6 +3,15 @@ import {useEffect} from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import {useInteractJS} from './hooks';
+import PazzleA from './img/sakasakuma-a.png';
+import PazzleB from './img/sakasakuma-b.png';
+import PazzleC from './img/sakasakuma-c.png';
+import PazzleD from './img/sakasakuma-d.png';
+import PazzleE from './img/sakasakuma-e.png';
+import PazzleF from './img/sakasakuma-f.png';
+import PazzleG from './img/sakasakuma-g.png';
+import PazzleH from './img/sakasakuma-h.png';
+import PazzleJ from './img/sakasakuma-j.png';
 
 
 /**
@@ -94,10 +103,110 @@ const App: React.FC = () => {
   const interactJ = useInteractJS(initPositionJ);
 
   useEffect(() => {
-    // interactG.disable();
-    // console.log(interactJ.positionName);
-    console.log('test');
-  }, [interactJ.position]);
+    console.log('useEffect');
+    if (interactA.positionName === 'midway') {
+      interactB.disable();
+      interactC.disable();
+      interactD.disable();
+      interactE.disable();
+      interactF.disable();
+      interactG.disable();
+      interactH.disable();
+      interactJ.disable();
+    } else if (interactB.positionName === 'midway') {
+      interactA.disable();
+      interactC.disable();
+      interactD.disable();
+      interactE.disable();
+      interactF.disable();
+      interactG.disable();
+      interactH.disable();
+      interactJ.disable();
+    } else if (interactC.positionName === 'midway') {
+      interactA.disable();
+      interactB.disable();
+      interactD.disable();
+      interactE.disable();
+      interactF.disable();
+      interactG.disable();
+      interactH.disable();
+      interactJ.disable();
+    } else if (interactD.positionName === 'midway') {
+      interactA.disable();
+      interactB.disable();
+      interactC.disable();
+      interactE.disable();
+      interactF.disable();
+      interactG.disable();
+      interactH.disable();
+      interactJ.disable();
+    } else if (interactE.positionName === 'midway') {
+      interactA.disable();
+      interactB.disable();
+      interactC.disable();
+      interactD.disable();
+      interactF.disable();
+      interactG.disable();
+      interactH.disable();
+      interactJ.disable();
+    } else if (interactF.positionName === 'midway') {
+      interactA.disable();
+      interactB.disable();
+      interactC.disable();
+      interactD.disable();
+      interactE.disable();
+      interactG.disable();
+      interactH.disable();
+      interactJ.disable();
+    } else if (interactG.positionName === 'midway') {
+      interactA.disable();
+      interactB.disable();
+      interactC.disable();
+      interactD.disable();
+      interactE.disable();
+      interactF.disable();
+      interactH.disable();
+      interactJ.disable();
+    } else if (interactH.positionName === 'midway') {
+      interactA.disable();
+      interactB.disable();
+      interactC.disable();
+      interactD.disable();
+      interactE.disable();
+      interactF.disable();
+      interactG.disable();
+      interactJ.disable();
+    } else if (interactJ.positionName === 'midway') {
+      interactA.disable();
+      interactB.disable();
+      interactC.disable();
+      interactD.disable();
+      interactE.disable();
+      interactF.disable();
+      interactG.disable();
+      interactH.disable();
+    } else {
+      interactA.enable();
+      interactB.enable();
+      interactC.enable();
+      interactD.enable();
+      interactE.enable();
+      interactF.enable();
+      interactG.enable();
+      interactH.enable();
+      interactJ.enable();
+    }
+  }, [
+    interactA.positionName,
+    interactB.positionName,
+    interactC.positionName,
+    interactD.positionName,
+    interactE.positionName,
+    interactF.positionName,
+    interactG.positionName,
+    interactH.positionName,
+    interactJ.positionName,
+  ]);
 
 
   return (
@@ -109,8 +218,8 @@ const App: React.FC = () => {
         ref={interactA.ref}
         style={{
           ...interactA.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleC + ')',
+          backgroundSize: 'cover',
         }}
       >
         A
@@ -120,8 +229,8 @@ const App: React.FC = () => {
         ref={interactB.ref}
         style={{
           ...interactB.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleH + ')',
+          backgroundSize: 'cover',
         }}
       >
         B
@@ -131,8 +240,8 @@ const App: React.FC = () => {
         ref={interactC.ref}
         style={{
           ...interactC.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleE + ')',
+          backgroundSize: 'cover',
         }}
       >
         C
@@ -142,8 +251,8 @@ const App: React.FC = () => {
         ref={interactD.ref}
         style={{
           ...interactD.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleD + ')',
+          backgroundSize: 'cover',
         }}
       >
         D
@@ -153,8 +262,8 @@ const App: React.FC = () => {
         ref={interactE.ref}
         style={{
           ...interactE.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleA + ')',
+          backgroundSize: 'cover',
         }}
       >
         E
@@ -164,8 +273,8 @@ const App: React.FC = () => {
         ref={interactF.ref}
         style={{
           ...interactF.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleF + ')',
+          backgroundSize: 'cover',
         }}
       >
         F
@@ -175,8 +284,8 @@ const App: React.FC = () => {
         ref={interactG.ref}
         style={{
           ...interactG.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleB + ')',
+          backgroundSize: 'cover',
         }}
       >
         G
@@ -186,8 +295,8 @@ const App: React.FC = () => {
         ref={interactH.ref}
         style={{
           ...interactH.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleG + ')',
+          backgroundSize: 'cover',
         }}
       >
         H
@@ -197,11 +306,10 @@ const App: React.FC = () => {
         ref={interactJ.ref}
         style={{
           ...interactJ.style,
-          border: '2px solid #0489B1',
-          backgroundColor: '#A9D0F5',
+          backgroundImage: 'url(' + PazzleJ + ')',
+          backgroundSize: 'cover',
         }}
       >
-        {interactJ.position.x}
         I
       </div>
     </div>
