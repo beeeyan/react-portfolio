@@ -104,7 +104,7 @@ export function useInteractJS(
     ...position,
   });
 
-  const [isEnabled, setEnable] = useState(true);
+  const [isEnabled, setEnable] = useState(false);
 
   const interactRef = useRef(null);
   let {x, y, width, height} = _position;
@@ -176,18 +176,6 @@ export function useInteractJS(
                                  edge.maxY : edge.minY;
           }
         });
-    // .on('resizemove', (event) =>{
-    //   width = event.rect.width;
-    //   height = event.rect.height;
-    //   x += event.deltaRect.left;
-    //   y += event.deltaRect.top;
-    //   setPosition({
-    //     x,
-    //     y,
-    //     width,
-    //     height,
-    //   });
-    // });
   };
 
   const disable = () => {

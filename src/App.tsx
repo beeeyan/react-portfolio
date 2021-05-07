@@ -208,11 +208,19 @@ const App: React.FC = () => {
     interactJ.positionName,
   ]);
 
+  // 初回のみ。
+  useEffect(() => {
+    console.log('first set');
+    interactA.disable();
+    interactB.disable();
+    interactC.disable();
+    interactD.disable();
+    interactE.disable();
+    interactG.disable();
+  }, []);
 
   return (
     <div className='App'>
-      <button onClick={() => interactA.enable()}>有効化</button>
-      <button onClick={() => interactA.disable()}>無効化</button>
       {/* A (0,0) */}
       <div
         ref={interactA.ref}
