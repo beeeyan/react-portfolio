@@ -1,5 +1,6 @@
 import React from 'react';
 import {useEffect} from 'react';
+// import {Box} from 'rebass';
 // import logo from './logo.svg';
 import './App.css';
 import {useInteractJS} from './hooks';
@@ -222,6 +223,7 @@ const App: React.FC = () => {
   return (
     <div className='App'>
       {/* A (0,0) */}
+      {/* <Box></Box> */}
       <div
         ref={interactA.ref}
         style={{
@@ -230,7 +232,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        A
       </div>
       {/* B (100,0) */}
       <div
@@ -241,7 +242,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        B
       </div>
       {/* C (200,0) */}
       <div
@@ -252,7 +252,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        C
       </div>
       {/* D (0,100) */}
       <div
@@ -263,7 +262,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        D
       </div>
       {/* E (100,100) */}
       <div
@@ -274,7 +272,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        E
       </div>
       {/* F (200,100) */}
       <div
@@ -285,7 +282,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        F
       </div>
       {/* G (0,200) */}
       <div
@@ -296,7 +292,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        G
       </div>
       {/* H (100,200) */}
       <div
@@ -307,7 +302,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        H
       </div>
       {/* I (200,200) */}
       <div
@@ -318,7 +312,6 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
         }}
       >
-        I
       </div>
     </div>
   );
