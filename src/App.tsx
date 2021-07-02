@@ -1,5 +1,7 @@
 import React from 'react';
 import {useEffect} from 'react';
+/** @jsxImportSource theme-ui */
+import {ThemeProvider, Theme, get} from 'theme-ui';
 // import {Box} from 'rebass';
 // import logo from './logo.svg';
 import './App.css';
@@ -102,6 +104,12 @@ const App: React.FC = () => {
   const interactG = useInteractJS(initPositionG);
   const interactH = useInteractJS(initPositionH);
   const interactJ = useInteractJS(initPositionJ);
+
+  const theme: Theme = {
+    colors: {background: 'white', text: 'black', primary: '#07f'},
+    space: [0, 8, 16, 32, 64, 128, 256],
+    sizes: [0, 8, 16, 32, 64, 128, 256],
+  };
 
   useEffect(() => {
     console.log('useEffect');
@@ -313,6 +321,19 @@ const App: React.FC = () => {
         }}
       >
       </div>
+      <ThemeProvider theme={theme}>
+        <div
+          sx={{
+            size: (t: Theme) => get(t, 'space.3') + get(t, 'sizes.5') ||
+            '100px',
+            pb: 3,
+            m: 3,
+            bg: 'primary',
+          }}
+        >
+          <div sx={{bg: 'background', size: 5}} />
+        </div>
+      </ThemeProvider>
     </div>
   );
 };
