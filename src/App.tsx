@@ -1,7 +1,7 @@
 import React from 'react';
 import {useEffect} from 'react';
 /** @jsxImportSource theme-ui */
-import {ThemeProvider, Theme, get} from 'theme-ui';
+import {Flex, Container} from 'theme-ui';
 // import {Box} from 'rebass';
 // import logo from './logo.svg';
 import './App.css';
@@ -104,12 +104,6 @@ const App: React.FC = () => {
   const interactG = useInteractJS(initPositionG);
   const interactH = useInteractJS(initPositionH);
   const interactJ = useInteractJS(initPositionJ);
-
-  const theme: Theme = {
-    colors: {background: 'white', text: 'black', primary: '#07f'},
-    space: [0, 8, 16, 32, 64, 128, 256],
-    sizes: [0, 8, 16, 32, 64, 128, 256],
-  };
 
   useEffect(() => {
     console.log('useEffect');
@@ -232,108 +226,99 @@ const App: React.FC = () => {
     <div className='App'>
       {/* A (0,0) */}
       {/* <Box></Box> */}
-      <div
-        ref={interactA.ref}
-        style={{
-          ...interactA.style,
-          backgroundImage: 'url(' + PazzleC + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      {/* B (100,0) */}
-      <div
-        ref={interactB.ref}
-        style={{
-          ...interactB.style,
-          backgroundImage: 'url(' + PazzleH + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      {/* C (200,0) */}
-      <div
-        ref={interactC.ref}
-        style={{
-          ...interactC.style,
-          backgroundImage: 'url(' + PazzleE + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      {/* D (0,100) */}
-      <div
-        ref={interactD.ref}
-        style={{
-          ...interactD.style,
-          backgroundImage: 'url(' + PazzleD + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      {/* E (100,100) */}
-      <div
-        ref={interactE.ref}
-        style={{
-          ...interactE.style,
-          backgroundImage: 'url(' + PazzleA + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      {/* F (200,100) */}
-      <div
-        ref={interactF.ref}
-        style={{
-          ...interactF.style,
-          backgroundImage: 'url(' + PazzleF + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      {/* G (0,200) */}
-      <div
-        ref={interactG.ref}
-        style={{
-          ...interactG.style,
-          backgroundImage: 'url(' + PazzleB + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      {/* H (100,200) */}
-      <div
-        ref={interactH.ref}
-        style={{
-          ...interactH.style,
-          backgroundImage: 'url(' + PazzleG + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      {/* I (200,200) */}
-      <div
-        ref={interactJ.ref}
-        style={{
-          ...interactJ.style,
-          backgroundImage: 'url(' + PazzleJ + ')',
-          backgroundSize: 'cover',
-        }}
-      >
-      </div>
-      <ThemeProvider theme={theme}>
-        <div
-          sx={{
-            size: (t: Theme) => get(t, 'space.3') + get(t, 'sizes.5') ||
-            '100px',
-            pb: 3,
-            m: 3,
-            bg: 'primary',
-          }}
-        >
-          <div sx={{bg: 'background', size: 5}} />
-        </div>
-      </ThemeProvider>
+      <Container>
+        <Flex sx={{'m': 4, 'justify-content': 'center'}}>
+          <div
+            ref={interactA.ref}
+            style={{
+              ...interactA.style,
+              backgroundImage: 'url(' + PazzleC + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+          {/* B (100,0) */}
+          <div
+            ref={interactB.ref}
+            style={{
+              ...interactB.style,
+              backgroundImage: 'url(' + PazzleH + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+          {/* C (200,0) */}
+          <div
+            ref={interactC.ref}
+            style={{
+              ...interactC.style,
+              backgroundImage: 'url(' + PazzleE + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+          {/* D (0,100) */}
+          <div
+            ref={interactD.ref}
+            style={{
+              ...interactD.style,
+              backgroundImage: 'url(' + PazzleD + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+          {/* E (100,100) */}
+          <div
+            ref={interactE.ref}
+            style={{
+              ...interactE.style,
+              backgroundImage: 'url(' + PazzleA + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+          {/* F (200,100) */}
+          <div
+            ref={interactF.ref}
+            style={{
+              ...interactF.style,
+              backgroundImage: 'url(' + PazzleF + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+          {/* G (0,200) */}
+          <div
+            ref={interactG.ref}
+            style={{
+              ...interactG.style,
+              backgroundImage: 'url(' + PazzleB + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+          {/* H (100,200) */}
+          <div
+            ref={interactH.ref}
+            style={{
+              ...interactH.style,
+              backgroundImage: 'url(' + PazzleG + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+          {/* I (200,200) */}
+          <div
+            ref={interactJ.ref}
+            style={{
+              ...interactJ.style,
+              backgroundImage: 'url(' + PazzleJ + ')',
+              backgroundSize: 'cover',
+            }}
+          >
+          </div>
+        </Flex>
+      </Container>
     </div>
   );
 };
