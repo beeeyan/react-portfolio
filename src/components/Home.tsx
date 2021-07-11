@@ -1,8 +1,7 @@
 import React from 'react';
 import {useEffect} from 'react';
 /** @jsxImportSource theme-ui */
-import {ThemeProvider, Theme, Flex, Box, Container} from 'theme-ui';
-import {HashLink} from 'react-router-hash-link';
+import {ThemeProvider, Theme, Flex, Box, Container, NavLink} from 'theme-ui';
 // import logo from './logo.svg';
 // import './App.css';
 import {useInteractJS} from '../hooks';
@@ -234,22 +233,21 @@ const Home: React.FC = () => {
         {/* A (0,0) */}
         {/* <Box></Box> */}
         <Container>
-          <Box p={3} color="white" bg="primary">
-            <HashLink smooth to="#">
-              sendFun(it,story)
-            </HashLink>
+          <Box as="nav" p={3} color="white" bg="primary">
+            <div sx={{'display': 'inline-block'}}>
+              <NavLink href="#!" p={2}>
+                Home
+              </NavLink>
+            </div>
+            <div sx={{'display': 'inline-block', 'float': 'right'}}>
+              <NavLink href="#!" p={2}>
+                Blog
+              </NavLink>
+              <NavLink href="#!" p={2}>
+                About
+              </NavLink>
+            </div>
           </Box>
-          {/* <Flex as="nav">
-            <NavLink href="#!" p={2}>
-              Home
-            </NavLink>
-            <NavLink href="#!" p={2}>
-              Blog
-            </NavLink>
-            <NavLink href="#!" p={2}>
-              About
-            </NavLink>
-          </Flex> */}
           <div sx={{ml: '-200px'}}>
             <Flex sx={{'mt': 4, 'justify-content': 'center'}}>
               <div
