@@ -1,10 +1,11 @@
-import React from 'react';
-import {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
 import {ThemeProvider, Theme, Flex, Box, Container, NavLink} from 'theme-ui';
+import {IChronologyFields} from '../utils/@types/generated/contentful';
 // import logo from './logo.svg';
 // import './App.css';
 import {useInteractJS} from '../hooks';
+import client from '../utils/client';
 import PazzleA from '../img/sakasakuma-a.png';
 import PazzleB from '../img/sakasakuma-b.png';
 import PazzleC from '../img/sakasakuma-c.png';
@@ -45,12 +46,25 @@ const theme: Theme = {
   colors: {background: '#cccccc', primary: '#0077ff'},
 };
 
-
 /**
  * home function
  * @return {React.FC}
  */
 const Home: React.FC = () => {
+  const [chronologies, setChrologies] = useState<IChronologyFields[]>([]);
+
+  // 適切値がsetされるように書き換える。
+  const fetchData = async () => {
+    try {
+      const resp = await client.getEntries({content_type: 'chronology'});
+      setChrologies(resp.items as any);
+      console.log(resp.items);
+      console.log(chronologies);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const initPositionB = {
     width: 100,
     height: 100,
@@ -224,14 +238,12 @@ const Home: React.FC = () => {
     interactD.disable();
     interactE.disable();
     interactG.disable();
-  }, []);
+    fetchData();
+  }, [setChrologies]);
 
   return (
     <ThemeProvider theme={theme}>
-
       <div>
-        {/* A (0,0) */}
-        {/* <Box></Box> */}
         <Container>
           <Box as="nav" p={3} color="white" bg="primary">
             <div sx={{'display': 'inline-block'}}>
@@ -248,8 +260,14 @@ const Home: React.FC = () => {
               </NavLink>
             </div>
           </Box>
+          {/* {
+            chronologies.map((chronology, index) => (
+              <div key={index}>{chronology.year}</div>
+            ))
+          } */}
           <div sx={{ml: '-200px'}}>
             <Flex sx={{'mt': 4, 'justify-content': 'center'}}>
+              {/* A (0,0) */}
               <div
                 ref={interactA.ref}
                 style={{
