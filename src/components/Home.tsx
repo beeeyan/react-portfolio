@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
 import {ThemeProvider, Theme, Flex, Box, Container, NavLink} from 'theme-ui';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
+import {fetchChronologies} from '../utils/contentFetchData';
 // import logo from './logo.svg';
 // import './App.css';
 import {useInteractJS} from '../hooks';
-import client from '../utils/client';
 import PazzleA from '../img/sakasakuma-a.png';
 import PazzleB from '../img/sakasakuma-b.png';
 import PazzleC from '../img/sakasakuma-c.png';
@@ -56,9 +56,9 @@ const Home: React.FC = () => {
   // 適切値がsetされるように書き換える。
   const fetchData = async () => {
     try {
-      const resp = await client.getEntries({content_type: 'chronology'});
-      setChrologies(resp.items as any);
-      console.log(resp.items);
+      const chronologiesArray = await fetchChronologies();
+      setChrologies(chronologiesArray as IChronologyFields[]);
+      console.log(chronologiesArray);
       console.log(chronologies);
     } catch (error) {
       console.log(error);
