@@ -8,7 +8,7 @@ import {Box, NavLink} from 'theme-ui';
  */
 const NavBar: React.FC = () => {
   return (
-    <Box as="nav" p={3} color="white" bg="primary">
+    <Box as="nav" p={3} bg="highlight">
       <div sx={{'display': 'inline-block'}}>
         <NavLink href="#!" p={2}>
           Home

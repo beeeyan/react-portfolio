@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
-import {ThemeProvider, Theme, Flex, Container} from 'theme-ui';
+import {ThemeProvider, Flex, Theme, Container} from 'theme-ui';
+import {swiss} from '@theme-ui/preset-swiss';
 import Navbar from './NavBar';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
 import {fetchChronologies} from '../utils/contentFetchData';
@@ -43,9 +44,9 @@ import PazzleJ from '../img/sakasakuma-j.png';
 //   );
 // }
 
-const theme: Theme = {
-  colors: {background: '#cccccc', primary: '#0077ff'},
-};
+// const theme: Theme = {
+//   colors: {background: '#cccccc', primary: '#0077ff'},
+// };
 
 /**
  * home function
@@ -243,7 +244,7 @@ const Home: React.FC = () => {
   }, [setChrologies]);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={swiss as Theme}>
       <div>
         <Container>
           {/* ナブバー */}
