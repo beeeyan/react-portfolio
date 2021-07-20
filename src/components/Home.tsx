@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
-import {ThemeProvider, Theme, Flex, Box, Container, NavLink} from 'theme-ui';
+import {ThemeProvider, Theme, Flex, Container} from 'theme-ui';
+import Navbar from './NavBar';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
 import {fetchChronologies} from '../utils/contentFetchData';
 // import logo from './logo.svg';
@@ -245,21 +246,8 @@ const Home: React.FC = () => {
     <ThemeProvider theme={theme}>
       <div>
         <Container>
-          <Box as="nav" p={3} color="white" bg="primary">
-            <div sx={{'display': 'inline-block'}}>
-              <NavLink href="#!" p={2}>
-                Home
-              </NavLink>
-            </div>
-            <div sx={{'display': 'inline-block', 'float': 'right'}}>
-              <NavLink href="#!" p={2}>
-                Blog
-              </NavLink>
-              <NavLink href="#!" p={2}>
-                About
-              </NavLink>
-            </div>
-          </Box>
+          {/* ナブバー */}
+          <Navbar></Navbar>
           {/* {
             chronologies.map((chronology, index) => (
               <div key={index}>{chronology.year}</div>
@@ -359,6 +347,15 @@ const Home: React.FC = () => {
               </div>
             </Flex>
           </div>
+          {/* <Flex sx={{'height': '500px'}}>
+            aaa
+          </Flex>
+          <Flex id="test">
+            test
+          </Flex>
+          <Flex sx={{'height': '500px'}}>
+            bbb
+          </Flex> */}
         </Container>
       </div>
     </ThemeProvider>
