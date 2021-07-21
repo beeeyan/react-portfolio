@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
-import {ThemeProvider, Flex, Theme, Container} from 'theme-ui';
+import {ThemeProvider, Flex, Theme, Container, Card} from 'theme-ui';
 import {swiss} from '@theme-ui/preset-swiss';
 import Navbar from './NavBar';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
@@ -243,8 +243,26 @@ const Home: React.FC = () => {
     fetchData();
   }, [setChrologies]);
 
+  const swissplus = {
+    ...swiss,
+    cards: {
+      primary: {
+        padding: 2,
+        borderRadius: 4,
+        boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+      },
+      compact: {
+        padding: 1,
+        borderRadius: 2,
+        border: '1px solid',
+        borderColor: 'muted',
+      },
+    },
+  };
+
+
   return (
-    <ThemeProvider theme={swiss as Theme}>
+    <ThemeProvider theme={swissplus as Theme}>
       <div>
         <Container>
           {/* ナブバー */}
@@ -254,98 +272,101 @@ const Home: React.FC = () => {
               <div key={index}>{chronology.year}</div>
             ))
           } */}
-          <div sx={{ml: '-200px'}}>
+          <div>
             <Flex sx={{'mt': 4, 'justify-content': 'center'}}>
-              {/* A (0,0) */}
-              <div
-                ref={interactA.ref}
-                style={{
-                  ...interactA.style,
-                  backgroundImage: 'url(' + PazzleC + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
-              {/* B (100,0) */}
-              <div
-                ref={interactB.ref}
-                style={{
-                  ...interactB.style,
-                  backgroundImage: 'url(' + PazzleH + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
-              {/* C (200,0) */}
-              <div
-                ref={interactC.ref}
-                style={{
-                  ...interactC.style,
-                  backgroundImage: 'url(' + PazzleE + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
-              {/* D (0,100) */}
-              <div
-                ref={interactD.ref}
-                style={{
-                  ...interactD.style,
-                  backgroundImage: 'url(' + PazzleD + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
-              {/* E (100,100) */}
-              <div
-                ref={interactE.ref}
-                style={{
-                  ...interactE.style,
-                  backgroundImage: 'url(' + PazzleA + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
-              {/* F (200,100) */}
-              <div
-                ref={interactF.ref}
-                style={{
-                  ...interactF.style,
-                  backgroundImage: 'url(' + PazzleF + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
-              {/* G (0,200) */}
-              <div
-                ref={interactG.ref}
-                style={{
-                  ...interactG.style,
-                  backgroundImage: 'url(' + PazzleB + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
-              {/* H (100,200) */}
-              <div
-                ref={interactH.ref}
-                style={{
-                  ...interactH.style,
-                  backgroundImage: 'url(' + PazzleG + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
-              {/* I (200,200) */}
-              <div
-                ref={interactJ.ref}
-                style={{
-                  ...interactJ.style,
-                  backgroundImage: 'url(' + PazzleJ + ')',
-                  backgroundSize: 'cover',
-                }}
-              >
-              </div>
+              <Card sx={{width: 450, height: 500}}>
+                <h3>パズル</h3>
+                {/* A (0,0) */}
+                <div
+                  ref={interactA.ref}
+                  style={{
+                    ...interactA.style,
+                    backgroundImage: 'url(' + PazzleC + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+                {/* B (100,0) */}
+                <div
+                  ref={interactB.ref}
+                  style={{
+                    ...interactB.style,
+                    backgroundImage: 'url(' + PazzleH + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+                {/* C (200,0) */}
+                <div
+                  ref={interactC.ref}
+                  style={{
+                    ...interactC.style,
+                    backgroundImage: 'url(' + PazzleE + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+                {/* D (0,100) */}
+                <div
+                  ref={interactD.ref}
+                  style={{
+                    ...interactD.style,
+                    backgroundImage: 'url(' + PazzleD + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+                {/* E (100,100) */}
+                <div
+                  ref={interactE.ref}
+                  style={{
+                    ...interactE.style,
+                    backgroundImage: 'url(' + PazzleA + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+                {/* F (200,100) */}
+                <div
+                  ref={interactF.ref}
+                  style={{
+                    ...interactF.style,
+                    backgroundImage: 'url(' + PazzleF + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+                {/* G (0,200) */}
+                <div
+                  ref={interactG.ref}
+                  style={{
+                    ...interactG.style,
+                    backgroundImage: 'url(' + PazzleB + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+                {/* H (100,200) */}
+                <div
+                  ref={interactH.ref}
+                  style={{
+                    ...interactH.style,
+                    backgroundImage: 'url(' + PazzleG + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+                {/* I (200,200) */}
+                <div
+                  ref={interactJ.ref}
+                  style={{
+                    ...interactJ.style,
+                    backgroundImage: 'url(' + PazzleJ + ')',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                </div>
+              </Card>
             </Flex>
           </div>
           {/* <Flex sx={{'height': '500px'}}>
