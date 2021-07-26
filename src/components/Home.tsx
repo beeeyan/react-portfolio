@@ -370,7 +370,7 @@ const Home: React.FC = () => {
           </div>
           {
             chronologies.map((chronology, index) => (
-              <div key={index}>{chronology.year}</div>
+              <div key={index}>{chronology.year}年{chronology.month}月</div>
             ))
           }
           {/* <Flex sx={{'height': '500px'}}>

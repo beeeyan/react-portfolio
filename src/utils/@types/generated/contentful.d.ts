@@ -4,7 +4,7 @@ import {Entry} from 'contentful';
 
 export interface IChronologyFields {
   /** year */
-  year?: number | undefined;
+  year: number;
 
   /** title */
   title?: string | undefined;
@@ -13,7 +13,7 @@ export interface IChronologyFields {
   content?: string | undefined;
 
   /** month */
-  month?: number | undefined;
+  month: number;
 }
 
 export interface IChronology extends Entry<IChronologyFields> {

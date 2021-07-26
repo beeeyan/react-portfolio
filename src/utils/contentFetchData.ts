@@ -17,8 +17,18 @@ export const fetchChronologies = async () => {
         content: item.fields.content,
       };
     });
-    return chronologies;
+    return sortedChronologies(chronologies);
   } catch (error) {
     console.log(error);
   }
+};
+
+const sortedChronologies = (chronologies: IChronologyFields[]) => {
+  chronologies.sort((a, b) => {
+    if (a.year != b.year) {
+      return a.year -b.year;
+    }
+    return a.month -b.month;
+  });
+  return chronologies;
 };
