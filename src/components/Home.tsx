@@ -68,52 +68,52 @@ const Home: React.FC = () => {
   };
 
   const initPositionB = {
-    width: 100,
-    height: 100,
-    x: 100,
+    width: 80,
+    height: 80,
+    x: 80,
     y: 0,
   };
   const initPositionC = {
-    width: 100,
-    height: 100,
-    x: 200,
+    width: 80,
+    height: 80,
+    x: 160,
     y: 0,
   };
   const initPositionD = {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     x: 0,
-    y: 100,
+    y: 80,
   };
   const initPositionE = {
-    width: 100,
-    height: 100,
-    x: 100,
-    y: 100,
+    width: 80,
+    height: 80,
+    x: 80,
+    y: 80,
   };
   const initPositionF = {
-    width: 100,
-    height: 100,
-    x: 200,
-    y: 100,
+    width: 80,
+    height: 80,
+    x: 160,
+    y: 80,
   };
   const initPositionG = {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     x: 0,
-    y: 200,
+    y: 160,
   };
   const initPositionH = {
-    width: 100,
-    height: 100,
-    x: 100,
-    y: 200,
+    width: 80,
+    height: 80,
+    x: 80,
+    y: 160,
   };
   const initPositionJ = {
-    width: 100,
-    height: 100,
-    x: 300,
-    y: 200,
+    width: 80,
+    height: 80,
+    x: 240,
+    y: 160,
   };
   const interactA = useInteractJS();
   const interactB = useInteractJS(initPositionB);
@@ -249,6 +249,7 @@ const Home: React.FC = () => {
       primary: {
         padding: 2,
         borderRadius: 4,
+        background: 'hsl(10, 20%, 94%)',
         boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
       },
       compact: {
@@ -267,15 +268,13 @@ const Home: React.FC = () => {
         <Container>
           {/* ナブバー */}
           <Navbar></Navbar>
-          {/* {
-            chronologies.map((chronology, index) => (
-              <div key={index}>{chronology.year}</div>
-            ))
-          } */}
           <div>
             <Flex sx={{'mt': 4, 'justify-content': 'center'}}>
-              <Card sx={{width: 450, height: 500}}>
-                <h3>パズル</h3>
+              <Card sx={{'width': '400px', 'height': '400px',
+                'background-color': 'hsl(10, 20%, 94%)'}}>
+                <h3>作ったもの：パズル</h3>
+                <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
+                <h5 sx={{mt: 0}}>※中途半端な位置だと他のパズルは動きません</h5>
                 {/* A (0,0) */}
                 <div
                   ref={interactA.ref}
@@ -369,6 +368,11 @@ const Home: React.FC = () => {
               </Card>
             </Flex>
           </div>
+          {
+            chronologies.map((chronology, index) => (
+              <div key={index}>{chronology.year}</div>
+            ))
+          }
           {/* <Flex sx={{'height': '500px'}}>
             aaa
           </Flex>
