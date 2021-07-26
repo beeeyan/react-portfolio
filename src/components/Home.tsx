@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {ThemeProvider, Flex, Theme, Container, Card} from 'theme-ui';
 import {swiss} from '@theme-ui/preset-swiss';
 import Navbar from './NavBar';
+import Histories from './Histories';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
 import {fetchChronologies} from '../utils/contentFetchData';
 // import logo from './logo.svg';
@@ -368,11 +369,7 @@ const Home: React.FC = () => {
               </Card>
             </Flex>
           </div>
-          {
-            chronologies.map((chronology, index) => (
-              <div key={index}>{chronology.year}年{chronology.month}月</div>
-            ))
-          }
+          <Histories chronologies={chronologies}/>
           {/* <Flex sx={{'height': '500px'}}>
             aaa
           </Flex>

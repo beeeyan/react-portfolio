@@ -19,10 +19,16 @@ export const fetchChronologies = async () => {
     });
     return sortedChronologies(chronologies);
   } catch (error) {
-    console.log(error);
+    console.log('通信失敗');
   }
 };
 
+/**
+ *
+ * @param {IChronologyFields[]} chronologies
+ * @return {IChronologyFields[]}
+ *
+ */
 const sortedChronologies = (chronologies: IChronologyFields[]) => {
   chronologies.sort((a, b) => {
     if (a.year != b.year) {
