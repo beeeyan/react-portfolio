@@ -369,7 +369,10 @@ const Home: React.FC = () => {
               </Card>
             </Flex>
           </div>
-          <Histories chronologies={chronologies}/>
+          {/* 経歴 */}
+          <div id="History" sx={{mt: 30}}>
+            <Histories chronologies={chronologies}/>
+          </div>
           {/* <Flex sx={{'height': '500px'}}>
             aaa
           </Flex>

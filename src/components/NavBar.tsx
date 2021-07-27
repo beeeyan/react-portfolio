@@ -15,8 +15,8 @@ const NavBar: React.FC = () => {
         </NavLink>
       </div>
       <div sx={{'display': 'inline-block', 'float': 'right'}}>
-        <NavLink href="#test" p={2}>
-          Blog
+        <NavLink href="#History" p={2}>
+          History
         </NavLink>
         <NavLink href="#!" p={2}>
           About
