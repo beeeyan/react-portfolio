@@ -15,6 +15,7 @@ export const fetchChronologies = async () => {
         month: item.fields.month,
         title: item.fields.title,
         content: item.fields.content,
+        icon: item.fields.icon,
       };
     });
     return sortedChronologies(chronologies);

@@ -1,4 +1,6 @@
 import React from 'react';
+/** @jsxImportSource theme-ui */
+import {Avatar, Flex} from 'theme-ui';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
 
 interface chronologyProps {
@@ -15,7 +17,10 @@ const Histories: React.FC<chronologyProps> = (props: chronologyProps) => {
     <div>
       {
         props.chronologies.map((chronology, index) => (
-          <div key={index}>{chronology.year}年{chronology.month}月</div>
+          <Flex key={`History${index}`}>
+            <Avatar src={chronology.icon.fields.file.url}/>
+            {chronology.year}年{chronology.month}月
+          </Flex>
         ))
       }
     </div>
