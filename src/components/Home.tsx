@@ -260,6 +260,14 @@ const Home: React.FC = () => {
         borderColor: 'muted',
       },
     },
+    images: {
+      avatar: {
+        width: 48,
+        height: 48,
+        boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+        borderRadius: 99999,
+      },
+    },
   };
 
 
@@ -370,18 +378,9 @@ const Home: React.FC = () => {
             </Flex>
           </div>
           {/* 経歴 */}
-          <div id="History" sx={{mt: 30}}>
+          <Flex id="History" sx={{'mt': '30', 'justify-content': 'center'}}>
             <Histories chronologies={chronologies}/>
-          </div>
-          {/* <Flex sx={{'height': '500px'}}>
-            aaa
           </Flex>
-          <Flex id="test">
-            test
-          </Flex>
-          <Flex sx={{'height': '500px'}}>
-            bbb
-          </Flex> */}
         </Container>
       </div>
     </ThemeProvider>
