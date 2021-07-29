@@ -41,6 +41,11 @@ const Histories: React.FC<chronologyProps> = (props: chronologyProps) => {
               {chronology.year}年{chronology.month}月
               <Card>
                 <h4>{chronology.title}</h4>
+                {chronology.image &&
+                  <img sx={{width: '30%'}}
+                    src={chronology.image.fields.file.url}
+                    alt={chronology.image.fields.title}/>
+                }
                 {chronology.content &&
                   documentToReactComponents(chronology.content, options)
                 }

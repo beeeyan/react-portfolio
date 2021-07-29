@@ -18,6 +18,9 @@ export interface IChronologyFields {
 
   /** content */
   content?: Document | undefined;
+
+  /** image */
+  image?: Asset | undefined;
 }
 
 export interface IChronology extends Entry<IChronologyFields> {
