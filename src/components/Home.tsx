@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
 import {ThemeProvider, Flex, Theme, Container, Card} from 'theme-ui';
-import {swiss} from '@theme-ui/preset-swiss';
+// import {swiss} from '@theme-ui/preset-swiss';
+import {roboto} from '@theme-ui/preset-roboto';
 import Navbar from './NavBar';
 import Histories from './Histories';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
@@ -244,13 +245,14 @@ const Home: React.FC = () => {
     fetchData();
   }, [setChrologies]);
 
-  const swissplus = {
-    ...swiss,
+  const ThemePlus = {
+    ...roboto,
     cards: {
       primary: {
         padding: 2,
         borderRadius: 4,
-        background: 'hsl(10, 20%, 94%)',
+        backgroundColor: 'muted',
+        borderColor: 'muted',
         boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
       },
       compact: {
@@ -272,15 +274,14 @@ const Home: React.FC = () => {
 
 
   return (
-    <ThemeProvider theme={swissplus as Theme}>
+    <ThemeProvider theme={ThemePlus as Theme}>
       <div>
         <Container>
           {/* ナブバー */}
           <Navbar></Navbar>
           <div>
             <Flex sx={{'mt': 4, 'justifyContent': 'center'}}>
-              <Card sx={{'width': '400px', 'height': '400px',
-                'backgroundColor': 'hsl(10, 20%, 94%)'}}>
+              <Card sx={{'width': '400px', 'height': '400px'}}>
                 <h3>作ったもの：パズル</h3>
                 <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
                 <h5 sx={{mt: 0}}>※中途半端な位置だと他のパズルは動きません</h5>
