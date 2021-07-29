@@ -278,9 +278,9 @@ const Home: React.FC = () => {
           {/* ナブバー */}
           <Navbar></Navbar>
           <div>
-            <Flex sx={{'mt': 4, 'justify-content': 'center'}}>
+            <Flex sx={{'mt': 4, 'justifyContent': 'center'}}>
               <Card sx={{'width': '400px', 'height': '400px',
-                'background-color': 'hsl(10, 20%, 94%)'}}>
+                'backgroundColor': 'hsl(10, 20%, 94%)'}}>
                 <h3>作ったもの：パズル</h3>
                 <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
                 <h5 sx={{mt: 0}}>※中途半端な位置だと他のパズルは動きません</h5>
@@ -378,7 +378,7 @@ const Home: React.FC = () => {
             </Flex>
           </div>
           {/* 経歴 */}
-          <Flex id="History" sx={{'mt': '30', 'justify-content': 'center'}}>
+          <Flex id="History" sx={{'mt': '30', 'justifyContent': 'center'}}>
             <Histories chronologies={chronologies}/>
           </Flex>
         </Container>
