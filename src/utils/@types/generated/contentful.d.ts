@@ -40,7 +40,41 @@ export interface IChronology extends Entry<IChronologyFields> {
   };
 }
 
-export type CONTENT_TYPE = 'chronology';
+export interface IProfileFields {
+  /** name */
+  name: string;
+
+  /** image */
+  image: Asset;
+
+  /** content */
+  content: Document;
+
+  /** qualifications */
+  qualifications?: Record<string, any> | undefined;
+
+  /** skills */
+  skills?: Record<string, any> | undefined;
+}
+
+export interface IProfile extends Entry<IProfileFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'profile';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
+export type CONTENT_TYPE = 'chronology' | 'profile';
 
 export type LOCALE_CODE = 'ja';
 
