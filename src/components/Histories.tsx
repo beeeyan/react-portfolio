@@ -1,6 +1,6 @@
 import React from 'react';
 /** @jsxImportSource theme-ui */
-import {Avatar, Flex, Card} from 'theme-ui';
+import {Avatar, Flex, Card, Image} from 'theme-ui';
 import {documentToReactComponents, Options}
   from '@contentful/rich-text-react-renderer';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
@@ -38,11 +38,11 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
             <div sx={{ml: 3, mb: 3, width: '100%'}}>
               <div sx={{'borderLeft': 'thick solid #778899',
                 'float': 'left', 'height': '100%', 'ml': '-43px'}}></div>
-              {chronology.year}年{chronology.month}月
+              <h4>{chronology.year}年{chronology.month}月</h4>
               <Card>
                 <h4>{chronology.title}</h4>
                 {chronology.image &&
-                  <img sx={{width: '30%'}}
+                  <Image sx={{width: '30%'}}
                     src={chronology.image.fields.file.url}
                     alt={chronology.image.fields.title}/>
                 }

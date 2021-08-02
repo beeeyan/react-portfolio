@@ -68,7 +68,7 @@ const Home: React.FC = () => {
       const profileDate = await fetchProfile();
       setProfile(profileDate as IProfileFields);
       console.log(chronologiesArray);
-      console.log(chronologies);
+      console.log(profileDate);
     } catch (error) {
       console.log(error);
     }
