@@ -22,6 +22,7 @@ import PazzleF from '../img/sakasakuma-f.png';
 import PazzleG from '../img/sakasakuma-g.png';
 import PazzleH from '../img/sakasakuma-h.png';
 import PazzleJ from '../img/sakasakuma-j.png';
+import Story from './Story';
 
 /**
  * Home function
@@ -396,6 +397,10 @@ const Home: React.FC = () => {
           {/* ブログ */}
           <Flex id="Blog" sx={{'mt': '3', 'justifyContent': 'center'}}>
             <Blog />
+          </Flex>
+          {/* ブログ */}
+          <Flex id="Story" sx={{'my': '3', 'justifyContent': 'center'}}>
+            <Story />
           </Flex>
         </Container>
       </div>
