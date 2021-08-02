@@ -6,6 +6,7 @@ import {roboto} from '@theme-ui/preset-roboto';
 import Navbar from './NavBar';
 import Histories from './Histories';
 import Profile from './Profile';
+import Blog from './Blog';
 import {IChronologyFields, IProfileFields}
   from '../utils/@types/generated/contentful';
 import {fetchChronologies, fetchProfile} from '../utils/contentFetchData';
@@ -21,7 +22,6 @@ import PazzleF from '../img/sakasakuma-f.png';
 import PazzleG from '../img/sakasakuma-g.png';
 import PazzleH from '../img/sakasakuma-h.png';
 import PazzleJ from '../img/sakasakuma-j.png';
-
 
 /**
  * Home function
@@ -248,7 +248,7 @@ const Home: React.FC = () => {
     interactE.disable();
     interactG.disable();
     fetchData();
-  }, [setChrologies]);
+  }, [setChrologies, setProfile]);
 
   const ThemePlus = {
     ...roboto,
@@ -386,12 +386,16 @@ const Home: React.FC = () => {
           {/* プロフィール */}
           <Flex id="Profile" sx={{'mt': '4', 'justifyContent': 'center'}}>
             {profile &&
-              <Profile {...profile}></Profile>
+              <Profile {...profile} />
             }
           </Flex>
           {/* 経歴 */}
           <Flex id="History" sx={{'mt': '3', 'justifyContent': 'center'}}>
             <Histories chronologies={chronologies}/>
+          </Flex>
+          {/* ブログ */}
+          <Flex id="Blog" sx={{'mt': '3', 'justifyContent': 'center'}}>
+            <Blog />
           </Flex>
         </Container>
       </div>
