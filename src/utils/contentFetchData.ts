@@ -1,6 +1,6 @@
-import {EntryCollection} from 'contentful';
+import {Entry, EntryCollection} from 'contentful';
 import client from './client';
-import {IChronologyFields} from './@types/generated/contentful';
+import {IChronologyFields, IProfileFields} from './@types/generated/contentful';
 
 /**
  * @return {IChronologyFields[]}
@@ -10,14 +10,7 @@ export const fetchChronologies = async () => {
     const resp : EntryCollection<IChronologyFields> =
     await client.getEntries({content_type: 'chronology'});
     const chronologies = resp.items.map((item) => {
-      return {
-        year: item.fields.year,
-        month: item.fields.month,
-        title: item.fields.title,
-        content: item.fields.content,
-        icon: item.fields.icon,
-        image: item.fields.image,
-      };
+      return item.fields;
     });
     return sortedChronologies(chronologies);
   } catch (error) {
@@ -39,4 +32,17 @@ const sortedChronologies = (chronologies: IChronologyFields[]) => {
     return a.month -b.month;
   });
   return chronologies;
+};
+
+/**
+ * @return {IProfileFields}
+ */
+export const fetchProfile = async () => {
+  try {
+    const resp : Entry<IProfileFields> =
+    await client.getEntry(process.env.REACT_APP_CONTENTFUL_PROFILE_ID || '');
+    return resp.fields;
+  } catch (error) {
+    console.log('通信失敗');
+  }
 };

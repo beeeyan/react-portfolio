@@ -5,7 +5,7 @@ import {documentToReactComponents, Options}
   from '@contentful/rich-text-react-renderer';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
 
-interface chronologyProps {
+interface ChronologyProps {
     chronologies: IChronologyFields[]
 }
 
@@ -21,10 +21,10 @@ const options: Options = {
 
 /**
  *
- * @param {hronologyProps} props
+ * @param {ChronologyProps} props
  * @return {jsx}
  */
-const Histories: React.FC<chronologyProps> = (props: chronologyProps) => {
+const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
   return (
     <div>
       <h2>History (経歴)</h2>

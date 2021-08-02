@@ -5,8 +5,10 @@ import {ThemeProvider, Flex, Theme, Container, Card} from 'theme-ui';
 import {roboto} from '@theme-ui/preset-roboto';
 import Navbar from './NavBar';
 import Histories from './Histories';
-import {IChronologyFields} from '../utils/@types/generated/contentful';
-import {fetchChronologies} from '../utils/contentFetchData';
+import Profile from './Profile';
+import {IChronologyFields, IProfileFields}
+  from '../utils/@types/generated/contentful';
+import {fetchChronologies, fetchProfile} from '../utils/contentFetchData';
 // import logo from './logo.svg';
 // import './App.css';
 import {useInteractJS} from '../hooks';
@@ -56,12 +58,15 @@ import PazzleJ from '../img/sakasakuma-j.png';
  */
 const Home: React.FC = () => {
   const [chronologies, setChrologies] = useState<IChronologyFields[]>([]);
+  const [profile, setProfile] = useState<IProfileFields>();
 
   // 適切値がsetされるように書き換える。
   const fetchData = async () => {
     try {
       const chronologiesArray = await fetchChronologies();
       setChrologies(chronologiesArray as IChronologyFields[]);
+      const profileDate = await fetchProfile();
+      setProfile(profileDate as IProfileFields);
       console.log(chronologiesArray);
       console.log(chronologies);
     } catch (error) {
@@ -378,8 +383,14 @@ const Home: React.FC = () => {
               </Card>
             </Flex>
           </div>
+          {/* プロフィール */}
+          <Flex id="Profile" sx={{'mt': '4', 'justifyContent': 'center'}}>
+            {profile &&
+              <Profile {...profile}></Profile>
+            }
+          </Flex>
           {/* 経歴 */}
-          <Flex id="History" sx={{'mt': '30', 'justifyContent': 'center'}}>
+          <Flex id="History" sx={{'mt': '3', 'justifyContent': 'center'}}>
             <Histories chronologies={chronologies}/>
           </Flex>
         </Container>
