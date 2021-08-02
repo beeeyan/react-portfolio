@@ -3,13 +3,15 @@ import React, {useEffect, useState} from 'react';
 import {ThemeProvider, Flex, Theme, Container, Card} from 'theme-ui';
 // import {swiss} from '@theme-ui/preset-swiss';
 import {roboto} from '@theme-ui/preset-roboto';
+import {IChronologyFields, IProfileFields}
+  from '../utils/@types/generated/contentful';
+import {fetchChronologies, fetchProfile} from '../utils/contentFetchData';
 import Navbar from './NavBar';
 import Histories from './Histories';
 import Profile from './Profile';
 import Blog from './Blog';
-import {IChronologyFields, IProfileFields}
-  from '../utils/@types/generated/contentful';
-import {fetchChronologies, fetchProfile} from '../utils/contentFetchData';
+import Story from './Story';
+import Footer from './Footer';
 // import logo from './logo.svg';
 // import './App.css';
 import {useInteractJS} from '../hooks';
@@ -22,7 +24,6 @@ import PazzleF from '../img/sakasakuma-f.png';
 import PazzleG from '../img/sakasakuma-g.png';
 import PazzleH from '../img/sakasakuma-h.png';
 import PazzleJ from '../img/sakasakuma-j.png';
-import Story from './Story';
 
 /**
  * Home function
@@ -399,9 +400,12 @@ const Home: React.FC = () => {
             <Blog />
           </Flex>
           {/* ブログ */}
-          <Flex id="Story" sx={{'my': '3', 'justifyContent': 'center'}}>
+          <Flex id="Story" sx={{'mt': '3', 'mb': '4',
+            'justifyContent': 'center'}}>
             <Story />
           </Flex>
+          {/* Footer */}
+          <Footer></Footer>
         </Container>
       </div>
     </ThemeProvider>
