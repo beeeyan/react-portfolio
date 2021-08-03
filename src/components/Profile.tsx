@@ -22,9 +22,9 @@ const options: Options = {
  */
 const Profile: React.FC<IProfileFields> = (props: IProfileFields) => {
   return (
-    <div>
+    <div sx={{'width': ['70%', null, '50%']}}>
       <h2>Profile</h2>
-      <Card sx={{'width': '500px'}}>
+      <Card>
         <div sx={{textAlign: 'center'}}>
           <h2>NAME : {props.name}</h2>
           <Image

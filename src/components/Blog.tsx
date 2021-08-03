@@ -9,9 +9,9 @@ import ZennImage from '../img/zenn.png';
  */
 const Blog: React.FC = () => {
   return (
-    <div>
+    <div sx={{'width': ['70%', null, '50%']}}>
       <h2>Blog</h2>
-      <Card sx={{'width': '500px'}}>
+      <Card>
         <Image src={ZennImage} alt='zennのmypageの記事'/>
         <Divider />
         技術ブログ。はてなやQiita・Zennなど。<br />

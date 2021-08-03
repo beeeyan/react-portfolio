@@ -9,10 +9,10 @@ import scbShosetuImage from '../img/scb-sinkiyuto-world.png';
  */
 const Story: React.FC = () => {
   return (
-    <div>
+    <div sx={{'width': '80%'}}>
       <h2>Story</h2>
       <Grid gap={4} columns={[1, null, 2]}>
-        <Card sx={{'width': '400px'}}>
+        <Card>
           <Image src={scbShosetuImage} alt='小説用のScrapboxの画像'/>
           <Divider />
           <h4>Scrapboxへのリンク</h4>
@@ -22,7 +22,7 @@ const Story: React.FC = () => {
           モノ書きさんにもScrapboxというサービスはとてもおすすめなので、<br />
           この機会によかったら触ってみてください！
         </Card>
-        <Card sx={{'width': '400px'}}>
+        <Card>
           <h4>小説サイト</h4>
           現在利用させてもらっている小説投稿サイトへの直リンクです。<br />
           (Scrapboxにあらすじ等まとめてあるので、Scrapbox経由を推奨中です)<br />

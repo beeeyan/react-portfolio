@@ -31,7 +31,7 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
   const [viewNum, setViewNum] = useState(initViewNum);
 
   return (
-    <div>
+    <div sx={{'width': '80%'}}>
       <h2>History (経歴)</h2>
       <Grid gap={2} columns={[1, null, 2]} sx={{mb: 2}}>
         <Button onClick={() => setViewNum(0)}>全て表示</Button>
