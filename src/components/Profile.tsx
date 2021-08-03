@@ -34,17 +34,23 @@ const Profile: React.FC<IProfileFields> = (props: IProfileFields) => {
         <h4 sx={{mb: -2}}>自己紹介文</h4>
         {documentToReactComponents(props.content, options)}
         <h4 sx={{mb: 1}}>保有資格</h4>
-        {props.qualifications &&
+        <details>
+          <summary>確認する</summary>
+          {props.qualifications &&
            props.qualifications.items.map((item: string, index: number) => (
              <div key={`Qualification${index}`}>{item}</div>
            ))
-        }
+          }
+        </details>
         <h4 sx={{mb: 1}}>触れたことのある技術</h4>
-        {props.skills &&
+        <details>
+          <summary>確認する</summary>
+          {props.skills &&
            props.skills.items.map((item: string, index: number) => (
              <div key={`skill${index}`}>{item}</div>
            ))
-        }
+          }
+        </details>
         <h4 sx={{mb: 1}}>このサイトについて</h4>
         React × TypeScriptで作成。
         ポートフォリオの役割を担っており、あまり細かいことは書きませんでした。<br/>
