@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 /** @jsxImportSource theme-ui */
-import {Avatar, Flex, Card, Image} from 'theme-ui';
+import {Avatar, Flex, Card, Image, Button, Grid} from 'theme-ui';
 import {documentToReactComponents, Options}
   from '@contentful/rich-text-react-renderer';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
@@ -25,11 +25,20 @@ const options: Options = {
  * @return {jsx}
  */
 const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
+  const chronologylen = props.chronologies.length;
+  // 直近3つを表示
+  const initViewNum = chronologylen - 4;
+  const [viewNum, setViewNum] = useState(initViewNum);
+
   return (
     <div>
       <h2>History (経歴)</h2>
+      <Grid gap={2} columns={[1, null, 2]} sx={{mb: 2}}>
+        <Button onClick={() => setViewNum(0)}>全て表示</Button>
+        <Button onClick={() => setViewNum(initViewNum)}>直近4つのみ(初期値)</Button>
+      </Grid>
       {
-        props.chronologies.map((chronology, index) => (
+        props.chronologies.slice(viewNum).map((chronology, index) => (
           <Flex key={`History${index}`}>
             <div>
               <Avatar src={chronology.icon.fields.file.url}
@@ -52,7 +61,6 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
               </Card>
             </div>
           </Flex>
-
         ))
       }
     </div>

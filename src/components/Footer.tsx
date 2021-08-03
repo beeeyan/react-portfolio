@@ -8,8 +8,13 @@ import {Box} from 'theme-ui';
  */
 const Footer : React.FC = () => {
   return (
-    <Box p={3} bg="highlight">
-    </Box>
+    <div>
+      <Box p={3} bg="highlight">
+      </Box>
+      <Box p={1} bg="primary">
+        © 2021 sendFun(it,story)
+      </Box>
+    </div>
   );
 };
 
