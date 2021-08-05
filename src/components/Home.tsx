@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
 import {ThemeProvider, Flex, Theme, Container, Card} from 'theme-ui';
 // import {swiss} from '@theme-ui/preset-swiss';
-import {roboto} from '@theme-ui/preset-roboto';
+// import {roboto} from '@theme-ui/preset-roboto';
 import {IChronologyFields, IProfileFields}
   from '../utils/@types/generated/contentful';
 import {fetchChronologies, fetchProfile} from '../utils/contentFetchData';
@@ -12,6 +12,7 @@ import Profile from './Profile';
 import Blog from './Blog';
 import Story from './Story';
 import Footer from './Footer';
+import {themePlus} from '../theme';
 // import logo from './logo.svg';
 // import './App.css';
 import {useInteractJS} from '../hooks';
@@ -27,35 +28,6 @@ import PazzleJ from '../img/sakasakuma-j.png';
 
 /**
  * Home function
- * @return {jsx}
- */
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// const theme: Theme = {
-//   colors: {background: '#cccccc', primary: '#0077ff'},
-// };
-
-/**
- * home function
  * @return {React.FC}
  */
 const Home: React.FC = () => {
@@ -252,36 +224,8 @@ const Home: React.FC = () => {
     fetchData();
   }, [setChrologies, setProfile]);
 
-  const ThemePlus = {
-    ...roboto,
-    cards: {
-      primary: {
-        padding: 2,
-        borderRadius: 4,
-        backgroundColor: 'muted',
-        borderColor: 'muted',
-        boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
-      },
-      compact: {
-        padding: 1,
-        borderRadius: 2,
-        border: '1px solid',
-        borderColor: 'muted',
-      },
-    },
-    images: {
-      avatar: {
-        width: 48,
-        height: 48,
-        boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
-        borderRadius: 99999,
-      },
-    },
-  };
-
-
   return (
-    <ThemeProvider theme={ThemePlus as Theme}>
+    <ThemeProvider theme={themePlus(false) as Theme}>
       <div>
         <Container>
           {/* ナブバー */}
