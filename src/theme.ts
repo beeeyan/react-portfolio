@@ -10,7 +10,7 @@ export const themePlus = (isDark: boolean) => {
         primary: {
           padding: 2,
           borderRadius: 4,
-          backgroundColor: 'muted',
+          backgroundColor: 'background',
           borderColor: 'muted',
           boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
         },

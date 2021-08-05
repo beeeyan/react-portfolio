@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
 import {ThemeProvider, Flex, Theme, Container, Card} from 'theme-ui';
-// import {swiss} from '@theme-ui/preset-swiss';
-// import {roboto} from '@theme-ui/preset-roboto';
 import {IChronologyFields, IProfileFields}
   from '../utils/@types/generated/contentful';
 import {fetchChronologies, fetchProfile} from '../utils/contentFetchData';
@@ -224,14 +222,18 @@ const Home: React.FC = () => {
     fetchData();
   }, [setChrologies, setProfile]);
 
+  // 追加の背景色
+  const backGroundColorPlus = 'background';
+
   return (
     <ThemeProvider theme={themePlus(false) as Theme}>
       <div>
         <Container>
           {/* ナブバー */}
           <Navbar></Navbar>
-          <div>
-            <Flex sx={{'mt': 4, 'justifyContent': 'center'}}>
+          <div id='garally'>
+            <Flex sx={{'py': 4, 'justifyContent': 'center',
+              'backgroundColor': backGroundColorPlus}}>
               <Card sx={{'width': '400px', 'height': '400px'}}>
                 <h3>作ったもの：パズル</h3>
                 <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
@@ -330,22 +332,25 @@ const Home: React.FC = () => {
             </Flex>
           </div>
           {/* プロフィール */}
-          <Flex id="Profile" sx={{'mt': '4', 'justifyContent': 'center'}}>
+          <Flex id="Profile" sx={{'pb': 4, 'justifyContent': 'center',
+            'backgroundColor': 'muted'}}>
             {profile &&
               <Profile {...profile} />
             }
           </Flex>
           {/* 経歴 */}
-          <Flex id="History" sx={{'mt': '3', 'justifyContent': 'center'}}>
+          <Flex id="History" sx={{'pb': 4, 'justifyContent': 'center',
+            'backgroundColor': 'highlight'}}>
             <Histories chronologies={chronologies}/>
           </Flex>
           {/* ブログ */}
-          <Flex id="Blog" sx={{'mt': '3', 'justifyContent': 'center'}}>
+          <Flex id="Blog" sx={{'pb': 4, 'justifyContent': 'center',
+            'backgroundColor': backGroundColorPlus}}>
             <Blog />
           </Flex>
-          {/* ブログ */}
-          <Flex id="Story" sx={{'mt': '3', 'mb': '4',
-            'justifyContent': 'center'}}>
+          {/* ストーリー */}
+          <Flex id="Story" sx={{'pb': '4', 'justifyContent': 'center',
+            'backgroundColor': 'muted'}}>
             <Story />
           </Flex>
           {/* Footer */}
