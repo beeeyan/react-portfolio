@@ -229,100 +229,102 @@ const Home: React.FC = () => {
           <Navbar></Navbar>
           <div id='garally'>
             <Flex sx={{'py': 4, 'justifyContent': 'center',
-              'backgroundColor': backGroundColorPlus, 'touchAction': 'none'}}>
+              'backgroundColor': backGroundColorPlus}}>
               <Card sx={{'width': '400px', 'height': '400px'}}>
                 <h3>作ったもの：パズル</h3>
                 <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
                 <h5 sx={{mt: 0}}>※動かして中途半端な位置だと他のパズルを動かせません</h5>
-                {/* A (0,0) */}
-                <div
-                  ref={interactA.ref}
-                  style={{
-                    ...interactA.style,
-                    backgroundImage: 'url(' + PazzleC + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
-                </div>
-                {/* B (100,0) */}
-                <div
-                  ref={interactB.ref}
-                  style={{
-                    ...interactB.style,
-                    backgroundImage: 'url(' + PazzleH + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
-                </div>
-                {/* C (200,0) */}
-                <div
-                  ref={interactC.ref}
-                  style={{
-                    ...interactC.style,
-                    backgroundImage: 'url(' + PazzleE + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
-                </div>
-                {/* D (0,100) */}
-                <div
-                  ref={interactD.ref}
-                  style={{
-                    ...interactD.style,
-                    backgroundImage: 'url(' + PazzleD + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
-                </div>
-                {/* E (100,100) */}
-                <div
-                  ref={interactE.ref}
-                  style={{
-                    ...interactE.style,
-                    backgroundImage: 'url(' + PazzleA + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
-                </div>
-                {/* F (200,100) */}
-                <div
-                  ref={interactF.ref}
-                  style={{
-                    ...interactF.style,
-                    backgroundImage: 'url(' + PazzleF + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
-                </div>
-                {/* G (0,200) */}
-                <div
-                  ref={interactG.ref}
-                  style={{
-                    ...interactG.style,
-                    backgroundImage: 'url(' + PazzleB + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
-                </div>
-                {/* H (100,200) */}
-                <div
-                  ref={interactH.ref}
-                  style={{
-                    ...interactH.style,
-                    backgroundImage: 'url(' + PazzleG + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
-                </div>
-                {/* I (200,200) */}
-                <div
-                  ref={interactJ.ref}
-                  style={{
-                    ...interactJ.style,
-                    backgroundImage: 'url(' + PazzleJ + ')',
-                    backgroundSize: 'cover',
-                  }}
-                >
+                <div sx={{'touchAction': 'none'}}>
+                  {/* A (0,0) */}
+                  <div
+                    ref={interactA.ref}
+                    style={{
+                      ...interactA.style,
+                      backgroundImage: 'url(' + PazzleC + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
+                  {/* B (100,0) */}
+                  <div
+                    ref={interactB.ref}
+                    style={{
+                      ...interactB.style,
+                      backgroundImage: 'url(' + PazzleH + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
+                  {/* C (200,0) */}
+                  <div
+                    ref={interactC.ref}
+                    style={{
+                      ...interactC.style,
+                      backgroundImage: 'url(' + PazzleE + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
+                  {/* D (0,100) */}
+                  <div
+                    ref={interactD.ref}
+                    style={{
+                      ...interactD.style,
+                      backgroundImage: 'url(' + PazzleD + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
+                  {/* E (100,100) */}
+                  <div
+                    ref={interactE.ref}
+                    style={{
+                      ...interactE.style,
+                      backgroundImage: 'url(' + PazzleA + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
+                  {/* F (200,100) */}
+                  <div
+                    ref={interactF.ref}
+                    style={{
+                      ...interactF.style,
+                      backgroundImage: 'url(' + PazzleF + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
+                  {/* G (0,200) */}
+                  <div
+                    ref={interactG.ref}
+                    style={{
+                      ...interactG.style,
+                      backgroundImage: 'url(' + PazzleB + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
+                  {/* H (100,200) */}
+                  <div
+                    ref={interactH.ref}
+                    style={{
+                      ...interactH.style,
+                      backgroundImage: 'url(' + PazzleG + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
+                  {/* I (200,200) */}
+                  <div
+                    ref={interactJ.ref}
+                    style={{
+                      ...interactJ.style,
+                      backgroundImage: 'url(' + PazzleJ + ')',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                  </div>
                 </div>
               </Card>
             </Flex>
