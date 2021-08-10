@@ -39,8 +39,6 @@ const Home: React.FC = () => {
       setChrologies(chronologiesArray as IChronologyFields[]);
       const profileDate = await fetchProfile();
       setProfile(profileDate as IProfileFields);
-      console.log(chronologiesArray);
-      console.log(profileDate);
     } catch (error) {
       console.log(error);
     }
@@ -212,7 +210,6 @@ const Home: React.FC = () => {
 
   // 初回のみ。
   useEffect(() => {
-    console.log('first set');
     interactA.disable();
     interactB.disable();
     interactC.disable();
