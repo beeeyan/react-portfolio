@@ -16,7 +16,7 @@ const options: Options = {
 };
 
 /**
- *
+ * Profileコンポーネント
  * @param {IProfileFields} props
  * @return {jsx}
  */
