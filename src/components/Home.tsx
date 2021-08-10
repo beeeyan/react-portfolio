@@ -229,7 +229,7 @@ const Home: React.FC = () => {
           <Navbar></Navbar>
           <div id='garally'>
             <Flex sx={{'py': 4, 'justifyContent': 'center',
-              'backgroundColor': backGroundColorPlus}}>
+              'backgroundColor': backGroundColorPlus, 'touchAction': 'none'}}>
               <Card sx={{'width': '400px', 'height': '400px'}}>
                 <h3>作ったもの：パズル</h3>
                 <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
