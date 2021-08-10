@@ -1,7 +1,6 @@
 import React from 'react';
 /** @jsxImportSource theme-ui */
 import {Box, NavLink} from 'theme-ui';
-// import Logo from '../img/logo.png';
 
 /**
  * Navbar function
