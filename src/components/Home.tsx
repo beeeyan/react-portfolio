@@ -103,7 +103,6 @@ const Home: React.FC = () => {
   const interactJ = useInteractJS(initPositionJ);
 
   useEffect(() => {
-    console.log('useEffect');
     if (interactA.positionName === 'midway') {
       interactB.disable();
       interactC.disable();
