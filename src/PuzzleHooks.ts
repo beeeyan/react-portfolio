@@ -1,10 +1,6 @@
 import {CSSProperties, useEffect, useRef, useState} from 'react';
 import interact from 'interactjs';
 
-// type Partial<T> = {
-//     [P in keyof T]?: T[P];
-// }
-
 type Position = {
   width: number;
   height: number;
@@ -12,12 +8,31 @@ type Position = {
   y: number;
 }
 
-const initPosition : Position = {
-  width: 80,
-  height: 80,
-  x: 0,
-  y: 0,
+// 正方形の一辺
+const side = 80;
+
+// アルファベットと配置の関係
+// 各ピースの初期値とサイズ
+// サイズ : side×sideで固定
+// 座標 : 四角形の左上の座標
+// A B C
+// D E F
+// G H I J
+export const puzzlePositon = {
+  a: {width: side, height: side, x: 0, y: 0},
+  b: {width: side, height: side, x: side, y: 0},
+  c: {width: side, height: side, x: side * 2, y: 0},
+  d: {width: side, height: side, x: 0, y: side},
+  e: {width: side, height: side, x: side, y: side},
+  f: {width: side, height: side, x: side * 2, y: side},
+  g: {width: side, height: side, x: 0, y: side * 2},
+  h: {width: side, height: side, x: side, y: side * 2},
+  i: {width: side, height: side, x: side * 2, y: side * 2},
+  j: {width: side, height: side, x: side * 3, y: side * 2},
 };
+
+// デフォルトの位置（Aの位置）
+const initPosition : Position = puzzlePositon.a;
 
 const edge = {
   minX: 0,
@@ -29,8 +44,6 @@ const edge = {
 const emptySpace = {
   minX: 160,
   minY: 160,
-  maxX: 240,
-  maxY: 240,
 };
 
 /**
@@ -40,19 +53,6 @@ const emptySpace = {
  * @return {String}
  */
 const judgePosition = (x: number, y: number): String => {
-  const puzzlePositon = {
-    a: {x: 0, y: 0},
-    b: {x: 80, y: 0},
-    c: {x: 160, y: 0},
-    d: {x: 0, y: 80},
-    e: {x: 80, y: 80},
-    f: {x: 160, y: 80},
-    g: {x: 0, y: 160},
-    h: {x: 80, y: 160},
-    i: {x: 160, y: 160},
-    j: {x: 240, y: 160},
-  };
-
   if (puzzlePositon.a.x === x && puzzlePositon.a.y === y) {
     return 'A';
   } else if (puzzlePositon.b.x === x &&
@@ -91,9 +91,8 @@ const judgePosition = (x: number, y: number): String => {
 /**
  * HTML要素を動かせるようにする
  * 返り値で取得できるinteractRefと、interactStyleをそれぞれ対象となるHTML要素の
- * refとstyleに指定することで、そのHTML要素のリサイズと移動が可能になる
+ * refとstyleに指定することで、そのHTML要素の(リサイズ)と移動が可能になる
  * @param {Partial} position - HTML要素の初期座標と大きさ、指定されない場合はinitPositionで指定された値になる。
- * @param {Required} edge - 端のposition
  * @return {interactRef}
  */
 export function useInteractJS(
@@ -124,29 +123,29 @@ export function useInteractJS(
           if (emptySpace.minX === x) {
             edge.minX = emptySpace.minX;
             edge.maxX = emptySpace.minX;
-            if ((emptySpace.minY - 80) <= y &&
+            if ((emptySpace.minY - side) <= y &&
                   y < emptySpace.minY) {
-              edge.minY = emptySpace.minY - 80;
+              edge.minY = emptySpace.minY - side;
               edge.maxY = emptySpace.minY;
             }
             if (emptySpace.minY < y &&
-                y <= (emptySpace.minY + 80)) {
+                y <= (emptySpace.minY + side)) {
               edge.minY = emptySpace.minY;
-              edge.maxY = emptySpace.minY + 80;
+              edge.maxY = emptySpace.minY + side;
             }
           }
           if (emptySpace.minY === y) {
             edge.minY = emptySpace.minY;
             edge.maxY = emptySpace.minY;
-            if ((emptySpace.minX - 80) <= x &&
+            if ((emptySpace.minX - side) <= x &&
                   x < emptySpace.minX) {
-              edge.minX = emptySpace.minX - 80;
+              edge.minX = emptySpace.minX - side;
               edge.maxX = emptySpace.minX;
             }
             if (emptySpace.minX < x &&
-                x <= (emptySpace.minX + 80)) {
+                x <= (emptySpace.minX + side)) {
               edge.minX = emptySpace.minX;
-              edge.maxX = emptySpace.minX + 80;
+              edge.maxX = emptySpace.minX + side;
             }
           }
           if (edge.minX <= x && x <= edge.maxX &&

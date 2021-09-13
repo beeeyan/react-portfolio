@@ -13,7 +13,7 @@ import Footer from './Footer';
 import {themePlus} from '../theme';
 // import logo from './logo.svg';
 // import './App.css';
-import {useInteractJS} from '../hooks';
+import {useInteractJS} from '../PuzzleHooks';
 import PazzleA from '../img/sakasakuma-a.png';
 import PazzleB from '../img/sakasakuma-b.png';
 import PazzleC from '../img/sakasakuma-c.png';
