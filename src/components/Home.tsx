@@ -13,7 +13,7 @@ import Footer from './Footer';
 import {themePlus} from '../theme';
 // import logo from './logo.svg';
 // import './App.css';
-import {useInteractJS} from '../PuzzleHooks';
+import {useInteractJS, puzzlePositon} from '../PuzzleHooks';
 import PazzleA from '../img/sakasakuma-a.png';
 import PazzleB from '../img/sakasakuma-b.png';
 import PazzleC from '../img/sakasakuma-c.png';
@@ -22,7 +22,7 @@ import PazzleE from '../img/sakasakuma-e.png';
 import PazzleF from '../img/sakasakuma-f.png';
 import PazzleG from '../img/sakasakuma-g.png';
 import PazzleH from '../img/sakasakuma-h.png';
-import PazzleJ from '../img/sakasakuma-j.png';
+import PazzleI from '../img/sakasakuma-j.png';
 
 /**
  * Home function
@@ -44,177 +44,131 @@ const Home: React.FC = () => {
     }
   };
 
-  const initPositionB = {
-    width: 80,
-    height: 80,
-    x: 80,
-    y: 0,
+  const placement = {
+    a: {piece: useInteractJS(), image: PazzleC, ans: 'C'},
+    b: {piece: useInteractJS(puzzlePositon.b), image: PazzleH, ans: 'H'},
+    c: {piece: useInteractJS(puzzlePositon.c), image: PazzleE, ans: 'E'},
+    d: {piece: useInteractJS(puzzlePositon.d), image: PazzleD, ans: 'D'},
+    e: {piece: useInteractJS(puzzlePositon.e), image: PazzleA, ans: 'A'},
+    f: {piece: useInteractJS(puzzlePositon.f), image: PazzleF, ans: 'F'},
+    g: {piece: useInteractJS(puzzlePositon.g), image: PazzleB, ans: 'B'},
+    h: {piece: useInteractJS(puzzlePositon.h), image: PazzleG, ans: 'G'},
+    j: {piece: useInteractJS(puzzlePositon.j), image: PazzleI, ans: 'I'},
   };
-  const initPositionC = {
-    width: 80,
-    height: 80,
-    x: 160,
-    y: 0,
-  };
-  const initPositionD = {
-    width: 80,
-    height: 80,
-    x: 0,
-    y: 80,
-  };
-  const initPositionE = {
-    width: 80,
-    height: 80,
-    x: 80,
-    y: 80,
-  };
-  const initPositionF = {
-    width: 80,
-    height: 80,
-    x: 160,
-    y: 80,
-  };
-  const initPositionG = {
-    width: 80,
-    height: 80,
-    x: 0,
-    y: 160,
-  };
-  const initPositionH = {
-    width: 80,
-    height: 80,
-    x: 80,
-    y: 160,
-  };
-  const initPositionJ = {
-    width: 80,
-    height: 80,
-    x: 240,
-    y: 160,
-  };
-  const interactA = useInteractJS();
-  const interactB = useInteractJS(initPositionB);
-  const interactC = useInteractJS(initPositionC);
-  const interactD = useInteractJS(initPositionD);
-  const interactE = useInteractJS(initPositionE);
-  const interactF = useInteractJS(initPositionF);
-  const interactG = useInteractJS(initPositionG);
-  const interactH = useInteractJS(initPositionH);
-  const interactJ = useInteractJS(initPositionJ);
 
   useEffect(() => {
-    if (interactA.positionName === 'midway') {
-      interactB.disable();
-      interactC.disable();
-      interactD.disable();
-      interactE.disable();
-      interactF.disable();
-      interactG.disable();
-      interactH.disable();
-      interactJ.disable();
-    } else if (interactB.positionName === 'midway') {
-      interactA.disable();
-      interactC.disable();
-      interactD.disable();
-      interactE.disable();
-      interactF.disable();
-      interactG.disable();
-      interactH.disable();
-      interactJ.disable();
-    } else if (interactC.positionName === 'midway') {
-      interactA.disable();
-      interactB.disable();
-      interactD.disable();
-      interactE.disable();
-      interactF.disable();
-      interactG.disable();
-      interactH.disable();
-      interactJ.disable();
-    } else if (interactD.positionName === 'midway') {
-      interactA.disable();
-      interactB.disable();
-      interactC.disable();
-      interactE.disable();
-      interactF.disable();
-      interactG.disable();
-      interactH.disable();
-      interactJ.disable();
-    } else if (interactE.positionName === 'midway') {
-      interactA.disable();
-      interactB.disable();
-      interactC.disable();
-      interactD.disable();
-      interactF.disable();
-      interactG.disable();
-      interactH.disable();
-      interactJ.disable();
-    } else if (interactF.positionName === 'midway') {
-      interactA.disable();
-      interactB.disable();
-      interactC.disable();
-      interactD.disable();
-      interactE.disable();
-      interactG.disable();
-      interactH.disable();
-      interactJ.disable();
-    } else if (interactG.positionName === 'midway') {
-      interactA.disable();
-      interactB.disable();
-      interactC.disable();
-      interactD.disable();
-      interactE.disable();
-      interactF.disable();
-      interactH.disable();
-      interactJ.disable();
-    } else if (interactH.positionName === 'midway') {
-      interactA.disable();
-      interactB.disable();
-      interactC.disable();
-      interactD.disable();
-      interactE.disable();
-      interactF.disable();
-      interactG.disable();
-      interactJ.disable();
-    } else if (interactJ.positionName === 'midway') {
-      interactA.disable();
-      interactB.disable();
-      interactC.disable();
-      interactD.disable();
-      interactE.disable();
-      interactF.disable();
-      interactG.disable();
-      interactH.disable();
+    if (placement.a.piece.positionName === 'midway') {
+      placement.b.piece.disable();
+      placement.c.piece.disable();
+      placement.d.piece.disable();
+      placement.e.piece.disable();
+      placement.f.piece.disable();
+      placement.g.piece.disable();
+      placement.h.piece.disable();
+      placement.j.piece.disable();
+    } else if (placement.b.piece.positionName === 'midway') {
+      placement.a.piece.disable();
+      placement.c.piece.disable();
+      placement.d.piece.disable();
+      placement.e.piece.disable();
+      placement.f.piece.disable();
+      placement.g.piece.disable();
+      placement.h.piece.disable();
+      placement.j.piece.disable();
+    } else if (placement.c.piece.positionName === 'midway') {
+      placement.a.piece.disable();
+      placement.b.piece.disable();
+      placement.d.piece.disable();
+      placement.e.piece.disable();
+      placement.f.piece.disable();
+      placement.g.piece.disable();
+      placement.h.piece.disable();
+      placement.j.piece.disable();
+    } else if (placement.d.piece.positionName === 'midway') {
+      placement.a.piece.disable();
+      placement.b.piece.disable();
+      placement.c.piece.disable();
+      placement.e.piece.disable();
+      placement.f.piece.disable();
+      placement.g.piece.disable();
+      placement.h.piece.disable();
+      placement.j.piece.disable();
+    } else if (placement.e.piece.positionName === 'midway') {
+      placement.a.piece.disable();
+      placement.b.piece.disable();
+      placement.c.piece.disable();
+      placement.d.piece.disable();
+      placement.f.piece.disable();
+      placement.g.piece.disable();
+      placement.h.piece.disable();
+      placement.j.piece.disable();
+    } else if (placement.f.piece.positionName === 'midway') {
+      placement.a.piece.disable();
+      placement.b.piece.disable();
+      placement.c.piece.disable();
+      placement.d.piece.disable();
+      placement.e.piece.disable();
+      placement.g.piece.disable();
+      placement.h.piece.disable();
+      placement.j.piece.disable();
+    } else if (placement.g.piece.positionName === 'midway') {
+      placement.a.piece.disable();
+      placement.b.piece.disable();
+      placement.c.piece.disable();
+      placement.d.piece.disable();
+      placement.e.piece.disable();
+      placement.f.piece.disable();
+      placement.h.piece.disable();
+      placement.j.piece.disable();
+    } else if (placement.h.piece.positionName === 'midway') {
+      placement.a.piece.disable();
+      placement.b.piece.disable();
+      placement.c.piece.disable();
+      placement.d.piece.disable();
+      placement.e.piece.disable();
+      placement.f.piece.disable();
+      placement.g.piece.disable();
+      placement.j.piece.disable();
+    } else if (placement.j.piece.positionName === 'midway') {
+      placement.a.piece.disable();
+      placement.b.piece.disable();
+      placement.c.piece.disable();
+      placement.d.piece.disable();
+      placement.e.piece.disable();
+      placement.f.piece.disable();
+      placement.g.piece.disable();
+      placement.h.piece.disable();
     } else {
-      interactA.enable();
-      interactB.enable();
-      interactC.enable();
-      interactD.enable();
-      interactE.enable();
-      interactF.enable();
-      interactG.enable();
-      interactH.enable();
-      interactJ.enable();
+      placement.a.piece.enable();
+      placement.b.piece.enable();
+      placement.c.piece.enable();
+      placement.d.piece.enable();
+      placement.e.piece.enable();
+      placement.f.piece.enable();
+      placement.g.piece.enable();
+      placement.h.piece.enable();
+      placement.j.piece.enable();
     }
   }, [
-    interactA.positionName,
-    interactB.positionName,
-    interactC.positionName,
-    interactD.positionName,
-    interactE.positionName,
-    interactF.positionName,
-    interactG.positionName,
-    interactH.positionName,
-    interactJ.positionName,
+    placement.a.piece.positionName,
+    placement.b.piece.positionName,
+    placement.c.piece.positionName,
+    placement.d.piece.positionName,
+    placement.e.piece.positionName,
+    placement.f.piece.positionName,
+    placement.g.piece.positionName,
+    placement.h.piece.positionName,
+    placement.j.piece.positionName,
   ]);
 
   // 初回のみ。
   useEffect(() => {
-    interactA.disable();
-    interactB.disable();
-    interactC.disable();
-    interactD.disable();
-    interactE.disable();
-    interactG.disable();
+    placement.a.piece.disable();
+    placement.b.piece.disable();
+    placement.c.piece.disable();
+    placement.d.piece.disable();
+    placement.e.piece.disable();
+    placement.g.piece.disable();
     fetchData();
   }, [setChrologies, setProfile]);
 
@@ -235,92 +189,92 @@ const Home: React.FC = () => {
                 <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
                 <h5 sx={{mt: 0}}>※動かして中途半端な位置だと他のパズルを動かせません</h5>
                 <div sx={{'touchAction': 'none'}}>
-                  {/* A (0,0) */}
+                  {/* A */}
                   <div
-                    ref={interactA.ref}
+                    ref={placement.a.piece.ref}
                     style={{
-                      ...interactA.style,
-                      backgroundImage: 'url(' + PazzleC + ')',
+                      ...placement.a.piece.style,
+                      backgroundImage: 'url(' + placement.a.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
                   </div>
-                  {/* B (100,0) */}
+                  {/* B */}
                   <div
-                    ref={interactB.ref}
+                    ref={placement.b.piece.ref}
                     style={{
-                      ...interactB.style,
-                      backgroundImage: 'url(' + PazzleH + ')',
+                      ...placement.b.piece.style,
+                      backgroundImage: 'url(' + placement.b.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
                   </div>
-                  {/* C (200,0) */}
+                  {/* C */}
                   <div
-                    ref={interactC.ref}
+                    ref={placement.c.piece.ref}
                     style={{
-                      ...interactC.style,
-                      backgroundImage: 'url(' + PazzleE + ')',
+                      ...placement.c.piece.style,
+                      backgroundImage: 'url(' + placement.c.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
                   </div>
-                  {/* D (0,100) */}
+                  {/* D */}
                   <div
-                    ref={interactD.ref}
+                    ref={placement.d.piece.ref}
                     style={{
-                      ...interactD.style,
-                      backgroundImage: 'url(' + PazzleD + ')',
+                      ...placement.d.piece.style,
+                      backgroundImage: 'url(' + placement.d.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
                   </div>
-                  {/* E (100,100) */}
+                  {/* E */}
                   <div
-                    ref={interactE.ref}
+                    ref={placement.e.piece.ref}
                     style={{
-                      ...interactE.style,
-                      backgroundImage: 'url(' + PazzleA + ')',
+                      ...placement.e.piece.style,
+                      backgroundImage: 'url(' + placement.e.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
                   </div>
-                  {/* F (200,100) */}
+                  {/* F */}
                   <div
-                    ref={interactF.ref}
+                    ref={placement.f.piece.ref}
                     style={{
-                      ...interactF.style,
-                      backgroundImage: 'url(' + PazzleF + ')',
+                      ...placement.f.piece.style,
+                      backgroundImage: 'url(' + placement.f.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
                   </div>
-                  {/* G (0,200) */}
+                  {/* G */}
                   <div
-                    ref={interactG.ref}
+                    ref={placement.g.piece.ref}
                     style={{
-                      ...interactG.style,
-                      backgroundImage: 'url(' + PazzleB + ')',
+                      ...placement.g.piece.style,
+                      backgroundImage: 'url(' + placement.g.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
                   </div>
-                  {/* H (100,200) */}
+                  {/* H */}
                   <div
-                    ref={interactH.ref}
+                    ref={placement.h.piece.ref}
                     style={{
-                      ...interactH.style,
-                      backgroundImage: 'url(' + PazzleG + ')',
+                      ...placement.h.piece.style,
+                      backgroundImage: 'url(' + placement.h.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
                   </div>
-                  {/* I (200,200) */}
+                  {/* I */}
                   <div
-                    ref={interactJ.ref}
+                    ref={placement.j.piece.ref}
                     style={{
-                      ...interactJ.style,
-                      backgroundImage: 'url(' + PazzleJ + ')',
+                      ...placement.j.piece.style,
+                      backgroundImage: 'url(' + placement.j.image + ')',
                       backgroundSize: 'cover',
                     }}
                   >
