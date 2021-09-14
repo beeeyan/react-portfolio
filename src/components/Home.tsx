@@ -22,7 +22,7 @@ import PazzleE from '../img/sakasakuma-e.png';
 import PazzleF from '../img/sakasakuma-f.png';
 import PazzleG from '../img/sakasakuma-g.png';
 import PazzleH from '../img/sakasakuma-h.png';
-import PazzleI from '../img/sakasakuma-j.png';
+import PazzleI from '../img/sakasakuma-i.png';
 
 /**
  * Home function
@@ -55,6 +55,17 @@ const Home: React.FC = () => {
     h: {piece: useInteractJS(puzzlePositon.h), image: PazzleG, ans: 'G'},
     j: {piece: useInteractJS(puzzlePositon.j), image: PazzleI, ans: 'I'},
   };
+
+  // 答えの判定フラグ
+  const ansFlg = placement.a.piece.positionName === placement.a.ans &&
+  placement.b.piece.positionName === placement.b.ans &&
+  placement.c.piece.positionName === placement.c.ans &&
+  placement.d.piece.positionName === placement.d.ans &&
+  placement.e.piece.positionName === placement.e.ans &&
+  placement.f.piece.positionName === placement.f.ans &&
+  placement.g.piece.positionName === placement.g.ans &&
+  placement.h.piece.positionName === placement.h.ans &&
+  placement.j.piece.positionName === placement.j.ans;
 
   useEffect(() => {
     if (placement.a.piece.positionName === 'midway') {
@@ -187,7 +198,10 @@ const Home: React.FC = () => {
               <Card sx={{'width': '400px', 'height': '400px'}}>
                 <h3>作ったもの：パズル</h3>
                 <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
-                <h5 sx={{mt: 0}}>※動かして中途半端な位置だと他のパズルを動かせません</h5>
+                <h5 sx={{my: 0}}>※動かして中途半端な位置だと他のパズルを動かせません。</h5>
+                <h5 sx={{my: 1, height: '1rem', color: '#FF0000'}}>
+                  {ansFlg && '完成!! Congratulations!!'}
+                </h5>
                 <div sx={{'touchAction': 'none'}}>
                   {/* A */}
                   <div
