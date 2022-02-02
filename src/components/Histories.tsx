@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ReactNode, useState} from 'react';
 /** @jsxImportSource theme-ui */
 import {Avatar, Flex, Card, Image, Button, Grid} from 'theme-ui';
 import {documentToReactComponents, Options}
@@ -10,10 +10,10 @@ interface ChronologyProps {
 }
 
 const options: Options = {
-  renderText: (text) => {
+  renderText: (text : string) => {
     return text.split('\n')
-        .reduce((children: any[], textSegment: string,
-            index: number): any[] => {
+        .reduce((children: ReactNode[], textSegment: string,
+            index: number): ReactNode[] => {
           return [...children, index > 0 && <br key={index} />, textSegment];
         }, []);
   },
