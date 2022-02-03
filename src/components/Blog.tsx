@@ -14,14 +14,16 @@ const Blog: React.FC = () => {
       <Card>
         <Image src={ZennImage} alt='zennのmypageの記事'/>
         <Divider />
-        技術ブログ。はてなやQiita・Zennなど。<br />
-        今後の投稿としては比較的Zennの記事が増えていく想定。<br />
-        リンクは以下<br />
-        <a href='https://zenn.dev/beeeyan' target='_blank' rel='noreferrer'>Zennのマイページ</a><br />
-        <a href='https://qiita.com/beeeyan' target='_blank' rel='noreferrer'>Qiitaのマイページ</a><br />
-        <a href='https://ashanoguzyutu.hatenablog.com' target='_blank' rel='noreferrer'>はてなブログ「ITと創作でねこを飼いたい」</a><br /><br />
-        ※ 今のところZennとQiitaには明確な使い分けはない<br />
-        はてなブログには軽いメモや技術以外のことも書く可能性がある<br />
+        <div sx={{pr: 20, pl: 20, pb: 20}}>
+          技術ブログ。はてなやQiita・Zennなど。<br />
+          今後の投稿としては比較的Zennの記事が増えていく想定。<br />
+          リンクは以下<br />
+          <a href='https://zenn.dev/beeeyan' target='_blank' rel='noreferrer'>Zennのマイページ</a><br />
+          <a href='https://qiita.com/beeeyan' target='_blank' rel='noreferrer'>Qiitaのマイページ</a><br />
+          <a href='https://ashanoguzyutu.hatenablog.com' target='_blank' rel='noreferrer'>はてなブログ「ITと創作でねこを飼いたい」</a><br /><br />
+          ※ 今のところZennとQiitaには明確な使い分けはない<br />
+          はてなブログには軽いメモや技術以外のことも書く可能性がある<br />
+        </div>
       </Card>
     </div>
   );

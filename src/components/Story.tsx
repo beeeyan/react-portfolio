@@ -15,14 +15,16 @@ const Story: React.FC = () => {
         <Card>
           <Image src={scbShosetuImage} alt='小説用のScrapboxの画像'/>
           <Divider />
-          <h4>Scrapboxへのリンク</h4>
-          現在公開中の小説についてScrapboxというサイトにまとめており、<br />
-          そちらのリンクが以下になります。<br />
-          <a href='https://scrapbox.io/sinkiyuto-world/作品紹介' target='_blank' rel='noreferrer'>Scrapbox作品紹介ページ</a><br />
-          モノ書きさんにもScrapboxというサービスはとてもおすすめなので、<br />
-          この機会によかったら触ってみてください！
+          <div sx={{pr: 20, pl: 20, pb: 20}}>
+            <h4>Scrapboxへのリンク</h4>
+            現在公開中の小説についてScrapboxというサイトにまとめており、<br />
+            そちらのリンクが以下になります。<br />
+            <a href='https://scrapbox.io/sinkiyuto-world/作品紹介' target='_blank' rel='noreferrer'>Scrapbox作品紹介ページ</a><br />
+            モノ書きさんにもScrapboxというサービスはとてもおすすめなので、<br />
+            この機会によかったら触ってみてください！
+          </div>
         </Card>
-        <Card>
+        <Card sx={{px: 20}}>
           <h4>小説サイト</h4>
           現在利用させてもらっている小説投稿サイトへの直リンクです。<br />
           (Scrapboxにあらすじ等まとめてあるので、Scrapbox経由を推奨中です)<br />

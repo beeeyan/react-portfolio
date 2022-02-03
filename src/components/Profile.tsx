@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 /** @jsxImportSource theme-ui */
 import {Card, Image} from 'theme-ui';
 import {documentToReactComponents, Options}
@@ -6,10 +6,10 @@ import {documentToReactComponents, Options}
 import {IProfileFields} from '../utils/@types/generated/contentful';
 
 const options: Options = {
-  renderText: (text) => {
+  renderText: (text : string) => {
     return text.split('\n')
-        .reduce((children: any[], textSegment: string,
-            index: number): any[] => {
+        .reduce((children: ReactNode[], textSegment: string,
+            index: number): ReactNode[] => {
           return [...children, index > 0 && <br key={index} />, textSegment];
         }, []);
   },
@@ -22,9 +22,9 @@ const options: Options = {
  */
 const Profile: React.FC<IProfileFields> = (props: IProfileFields) => {
   return (
-    <div sx={{'width': ['70%', null, '50%']}}>
+    <div sx={{width: ['70%', null, '50%']}}>
       <h2>Profile</h2>
-      <Card>
+      <Card sx={{p: 20}}>
         <div sx={{textAlign: 'center'}}>
           <h2>NAME : {props.name}</h2>
           <Image

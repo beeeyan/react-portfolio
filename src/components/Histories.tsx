@@ -48,7 +48,7 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
               <div sx={{'borderLeft': 'thick solid #778899',
                 'float': 'left', 'height': '100%', 'ml': '-43px'}}></div>
               <h4>{chronology.year}年{chronology.month}月</h4>
-              <Card>
+              <Card sx={{px: 20}}>
                 <h4>{chronology.title}</h4>
                 {chronology.image &&
                   <Image sx={{width: '30%'}}
