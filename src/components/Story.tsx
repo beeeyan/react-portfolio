@@ -19,7 +19,7 @@ const Story: React.FC = () => {
             <h4>Scrapboxへのリンク</h4>
             現在公開中の小説についてScrapboxというサイトにまとめており、<br />
             そちらのリンクが以下になります。<br />
-            <a href='https://scrapbox.io/sinkiyuto-world/作品紹介' target='_blank' rel='noreferrer'>Scrapbox作品紹介ページ</a><br />
+            <a href='https://scrapbox.io/sinkiyuto-world/作品紹介' target='_blank' rel='noopener noreferrer'>Scrapbox作品紹介ページ</a><br />
             モノ書きさんにもScrapboxというサービスはとてもおすすめなので、<br />
             この機会によかったら触ってみてください！
           </div>
@@ -40,8 +40,8 @@ const Story: React.FC = () => {
           [monogatary掲載作品]<br />
           人語翻訳機<br />
           <Divider />
-          <a href='https://mypage.syosetu.com/377342/' target='_blank' rel='noreferrer'>小説家になろう</a><br />
-          <a href='https://monogatary.com/user_page/story/5e2d9ea0-ee1a-11e8-8041-0242ac120002' target='_blank' rel='noreferrer'>monogatary</a><br />
+          <a href='https://mypage.syosetu.com/377342/' target='_blank' rel='noopener noreferrer'>小説家になろう</a><br />
+          <a href='https://monogatary.com/user_page/story/5e2d9ea0-ee1a-11e8-8041-0242ac120002' target='_blank' rel='noopener noreferrer'>monogatary</a><br />
         </Card>
       </Grid>
     </div>

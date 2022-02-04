@@ -55,7 +55,7 @@ const Profile: React.FC<IProfileFields> = (props: IProfileFields) => {
         React × TypeScriptで作成。
         ポートフォリオの役割を担っており、あまり細かいことは書きませんでした。<br/>
         より詳しい（雑多な）情報は以下にまとめています。<br/>
-        Scrapbox : <a href='https://scrapbox.io/beeeyan-trial-box/' target='_blank' rel='noreferrer'>beeeyan-trial-box</a>
+        Scrapbox : <a href='https://scrapbox.io/beeeyan-trial-box/' target='_blank' rel='noopener noreferrer'>beeeyan-trial-box</a>
       </Card>
     </div>
   );
