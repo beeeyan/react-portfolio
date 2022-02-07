@@ -20,8 +20,8 @@ const options: Options = {
  * @param {IProfileFields} props
  * @return {jsx}
  */
-const Profile: React.FC<IProfileFields> = (props: IProfileFields) => {
-  return (
+const Profile: React.FC<IProfileFields> = (props: IProfileFields) =>
+  (
     <div sx={{width: ['70%', null, '50%']}}>
       <h2>Profile</h2>
       <Card sx={{p: 20}}>
@@ -59,6 +59,5 @@ const Profile: React.FC<IProfileFields> = (props: IProfileFields) => {
       </Card>
     </div>
   );
-};
 
 export default Profile;

@@ -7,8 +7,8 @@ import scbShosetuImage from '../img/scb-sinkiyuto-world.png';
  *
  * @return {jsx}
  */
-const Story: React.FC = () => {
-  return (
+const Story: React.FC = () =>
+  (
     <div sx={{'width': '80%'}}>
       <h2>Story</h2>
       <Grid gap={4} columns={[1, null, 2]}>
@@ -46,6 +46,5 @@ const Story: React.FC = () => {
       </Grid>
     </div>
   );
-};
 
 export default Story;

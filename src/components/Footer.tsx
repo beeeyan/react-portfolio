@@ -6,8 +6,8 @@ import {Box} from 'theme-ui';
  *
  * @return {jsx}
  */
-const Footer : React.FC = () => {
-  return (
+const Footer : React.FC = () =>
+  (
     <div>
       <Box p={3} bg="highlight">
       </Box>
@@ -16,6 +16,5 @@ const Footer : React.FC = () => {
       </Box>
     </div>
   );
-};
 
 export default Footer;

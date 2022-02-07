@@ -6,8 +6,8 @@ import {Box, NavLink} from 'theme-ui';
  * Navbar function
  * @return {jsx}
  */
-const NavBar: React.FC = () => {
-  return (
+const NavBar: React.FC = () =>
+  (
     <Box as="nav" p={3} bg="highlight">
       <div sx={{'display': ['block', null, 'inline-block']}}>
         <NavLink href="#!" sx={{fontSize: '1.2rem'}} p={2}>
@@ -31,6 +31,5 @@ const NavBar: React.FC = () => {
       </div>
     </Box>
   );
-};
 
 export default NavBar;

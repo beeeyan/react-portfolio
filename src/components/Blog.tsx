@@ -7,8 +7,8 @@ import ZennImage from '../img/zenn.png';
  *
  * @return {jsx}
  */
-const Blog: React.FC = () => {
-  return (
+const Blog: React.FC = () =>
+  (
     <div sx={{'width': ['70%', null, '50%']}}>
       <h2>Blog</h2>
       <Card>
@@ -27,6 +27,5 @@ const Blog: React.FC = () => {
       </Card>
     </div>
   );
-};
 
 export default Blog;
