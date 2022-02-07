@@ -1,19 +1,10 @@
-import React, {ReactNode} from 'react';
+import React from 'react';
 /** @jsxImportSource theme-ui */
 import {Card, Image} from 'theme-ui';
-import {documentToReactComponents, Options}
+import {documentToReactComponents}
   from '@contentful/rich-text-react-renderer';
 import {IProfileFields} from '../utils/@types/generated/contentful';
-
-const options: Options = {
-  renderText: (text : string) => {
-    return text.split('\n')
-        .reduce((children: ReactNode[], textSegment: string,
-            index: number): ReactNode[] => {
-          return [...children, index > 0 && <br key={index} />, textSegment];
-        }, []);
-  },
-};
+import {richTextViewOptions} from './RichTextViewOption';
 
 /**
  * Profileコンポーネント
@@ -32,7 +23,7 @@ const Profile: React.FC<IProfileFields> = (props: IProfileFields) =>
             alt={props.image.fields.title}/>
         </div>
         <h4 sx={{mb: -2}}>自己紹介文</h4>
-        {documentToReactComponents(props.content, options)}
+        {documentToReactComponents(props.content, richTextViewOptions)}
         <h4 sx={{mb: 1}}>保有資格</h4>
         <details>
           <summary>確認する</summary>

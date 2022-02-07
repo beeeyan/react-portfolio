@@ -1,23 +1,14 @@
-import React, {ReactNode, useState} from 'react';
+import React, {useState} from 'react';
 /** @jsxImportSource theme-ui */
 import {Avatar, Flex, Card, Image, Button, Grid} from 'theme-ui';
-import {documentToReactComponents, Options}
+import {documentToReactComponents}
   from '@contentful/rich-text-react-renderer';
 import {IChronologyFields} from '../utils/@types/generated/contentful';
+import {richTextViewOptions} from './RichTextViewOption';
 
 interface ChronologyProps {
     chronologies: IChronologyFields[]
 }
-
-const options: Options = {
-  renderText: (text : string) => {
-    return text.split('\n')
-        .reduce((children: ReactNode[], textSegment: string,
-            index: number): ReactNode[] => {
-          return [...children, index > 0 && <br key={index} />, textSegment];
-        }, []);
-  },
-};
 
 /**
  *
@@ -56,7 +47,8 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
                     alt={chronology.image.fields.title}/>
                 }
                 {chronology.content &&
-                  documentToReactComponents(chronology.content, options)
+                  documentToReactComponents(chronology.content,
+                      richTextViewOptions)
                 }
               </Card>
             </div>
