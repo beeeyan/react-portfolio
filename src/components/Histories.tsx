@@ -22,7 +22,7 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
   const [viewNum, setViewNum] = useState(initViewNum);
 
   return (
-    <div sx={{'width': '80%'}}>
+    <div sx={{width: '80%'}}>
       <h2>History (経歴)</h2>
       <Grid gap={2} columns={[1, null, 2]} sx={{mb: 2}}>
         <Button onClick={() => setViewNum(0)}>全て表示</Button>
@@ -33,11 +33,11 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
           <Flex key={`History${index}`}>
             <div>
               <Avatar src={chronology.icon.fields.file.url}
-                sx={{'position': 'relative', 'backgroundColor': '#FFFFFF'}}/>
+                sx={{position: 'relative', backgroundColor: '#FFFFFF'}}/>
             </div>
             <div sx={{ml: 3, mb: 3, width: '100%'}}>
-              <div sx={{'borderLeft': 'thick solid #778899',
-                'float': 'left', 'height': '100%', 'ml': '-43px'}}></div>
+              <div sx={{borderLeft: 'thick solid #778899',
+                float: 'left', height: '100%', ml: '-43px'}}></div>
               <h4>{chronology.year}年{chronology.month}月</h4>
               <Card sx={{px: 20}}>
                 <h4>{chronology.title}</h4>

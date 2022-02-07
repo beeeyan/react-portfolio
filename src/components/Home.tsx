@@ -193,9 +193,9 @@ const Home: React.FC = () => {
           {/* ナブバー */}
           <Navbar></Navbar>
           <div id='garally'>
-            <Flex sx={{'py': 4, 'justifyContent': 'center',
-              'backgroundColor': backGroundColorPlus}}>
-              <Card sx={{'width': '400px', 'height': '400px'}}>
+            <Flex sx={{py: 4, justifyContent: 'center',
+              backgroundColor: backGroundColorPlus}}>
+              <Card sx={{width: '400px', height: '400px'}}>
                 <h3>作ったもの：パズル</h3>
                 <h5 sx={{mb: 0}}>暇なときにでも遊んでみてください!!</h5>
                 <h5 sx={{my: 0}}>※動かして中途半端な位置だと他のパズルを動かせません。</h5>
@@ -298,25 +298,25 @@ const Home: React.FC = () => {
             </Flex>
           </div>
           {/* プロフィール */}
-          <Flex id="Profile" sx={{'pb': 4, 'justifyContent': 'center',
-            'backgroundColor': 'muted'}}>
+          <Flex id="Profile" sx={{pb: 4, justifyContent: 'center',
+            backgroundColor: 'muted'}}>
             {profile &&
               <Profile {...profile} />
             }
           </Flex>
           {/* 経歴 */}
-          <Flex id="History" sx={{'pb': 4, 'justifyContent': 'center',
-            'backgroundColor': 'highlight'}}>
+          <Flex id="History" sx={{pb: 4, justifyContent: 'center',
+            backgroundColor: 'highlight'}}>
             <Histories chronologies={chronologies}/>
           </Flex>
           {/* ブログ */}
-          <Flex id="Blog" sx={{'pb': 4, 'justifyContent': 'center',
-            'backgroundColor': backGroundColorPlus}}>
+          <Flex id="Blog" sx={{pb: 4, justifyContent: 'center',
+            backgroundColor: backGroundColorPlus}}>
             <Blog />
           </Flex>
           {/* ストーリー */}
-          <Flex id="Story" sx={{'pb': '4', 'justifyContent': 'center',
-            'backgroundColor': 'muted'}}>
+          <Flex id="Story" sx={{pb: '4', justifyContent: 'center',
+            backgroundColor: 'muted'}}>
             <Story />
           </Flex>
           {/* Footer */}

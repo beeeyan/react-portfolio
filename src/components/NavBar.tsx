@@ -9,13 +9,13 @@ import {Box, NavLink} from 'theme-ui';
 const NavBar: React.FC = () =>
   (
     <Box as="nav" p={3} bg="highlight">
-      <div sx={{'display': ['block', null, 'inline-block']}}>
+      <div sx={{display: ['block', null, 'inline-block']}}>
         <NavLink href="#!" sx={{fontSize: '1.2rem'}} p={2}>
           sendFun(it, story)
         </NavLink>
       </div>
-      <div sx={{'display': ['block', null, 'inline-block'],
-        'float': ['none', null, 'right']}}>
+      <div sx={{display: ['block', null, 'inline-block'],
+        float: ['none', null, 'right']}}>
         <NavLink href="#Profile" p={2}>
           Profile
         </NavLink>

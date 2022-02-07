@@ -9,7 +9,7 @@ import ZennImage from '../img/zenn.png';
  */
 const Blog: React.FC = () =>
   (
-    <div sx={{'width': ['70%', null, '50%']}}>
+    <div sx={{width: ['70%', null, '50%']}}>
       <h2>Blog</h2>
       <Card>
         <Image src={ZennImage} alt='zennのmypageの記事'/>
