@@ -12,7 +12,7 @@ const Footer : React.FC = () =>
       <Box p={3} bg="highlight">
       </Box>
       <Box p={1} bg="primary">
-        © 2021 sendFun(it,story)
+        © 2021 - 2022. sendFun(it,story)
       </Box>
     </div>
   );
