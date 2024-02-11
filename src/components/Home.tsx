@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 /** @jsxImportSource theme-ui */
-import {ThemeProvider, Flex, Theme, Container, Card} from 'theme-ui';
+import {ThemeUIProvider, Flex, Theme, Container, Card} from 'theme-ui';
 import {IChronologyFields, IProfileFields}
   from '../utils/@types/generated/contentful';
 import {fetchChronologies, fetchProfile} from '../utils/contentFetchData';
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
       const chronologiesArray = await fetchChronologies();
       setChrologies(chronologiesArray as IChronologyFields[]);
       const profileDate = await fetchProfile();
-      setProfile(profileDate as IProfileFields);
+      setProfile(profileDate);
     } catch (error) {
       console.log(error);
     }
@@ -187,7 +187,7 @@ const Home: React.FC = () => {
   const backGroundColorPlus = 'background';
 
   return (
-    <ThemeProvider theme={themePlus(false) as Theme}>
+    <ThemeUIProvider theme={themePlus(false) as Theme}>
       <div>
         <Container>
           {/* ナブバー */}
@@ -323,7 +323,7 @@ const Home: React.FC = () => {
           <Footer></Footer>
         </Container>
       </div>
-    </ThemeProvider>
+    </ThemeUIProvider>
   );
 };
 

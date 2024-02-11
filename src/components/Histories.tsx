@@ -32,7 +32,7 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
         props.chronologies.slice(viewNum).map((chronology, index) => (
           <Flex key={`History${index}`}>
             <div>
-              <Avatar src={chronology.icon.fields.file.url}
+              <Avatar src={'https:' + chronology.icon.fields.file?.url}
                 sx={{position: 'relative', backgroundColor: '#FFFFFF'}}/>
             </div>
             <div sx={{ml: 3, mb: 3, width: '100%'}}>
@@ -43,8 +43,8 @@ const Histories: React.FC<ChronologyProps> = (props: ChronologyProps) => {
                 <h4>{chronology.title}</h4>
                 {chronology.image &&
                   <Image sx={{width: '30%'}}
-                    src={chronology.image.fields.file.url}
-                    alt={chronology.image.fields.title}/>
+                    src={'https:' + chronology.image.fields.file?.url}
+                    alt={`${chronology.image.fields.title}`}/>
                 }
                 {chronology.content &&
                   documentToReactComponents(chronology.content,

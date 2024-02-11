@@ -11,7 +11,7 @@ import {richTextViewOptions} from './RichTextViewOption';
  * @param {IProfileFields} props
  * @return {jsx}
  */
-const Profile: React.FC<IProfileFields> = (props: IProfileFields) =>
+const Profile: React.FC<IProfileFields> = (props: IProfileFields) => 
   (
     <div sx={{width: ['70%', null, '50%']}}>
       <h2>Profile</h2>
@@ -19,8 +19,9 @@ const Profile: React.FC<IProfileFields> = (props: IProfileFields) =>
         <div sx={{textAlign: 'center'}}>
           <h2>NAME : {props.name}</h2>
           <Image
-            src={props.image.fields.file.url}
-            alt={props.image.fields.title}/>
+            src={'https:' + props.image.fields.file?.url}
+            // 過去のソースコードから変更
+            alt={`${props.image.fields.title}`}/>
         </div>
         <h4 sx={{mb: -2}}>自己紹介文</h4>
         {documentToReactComponents(props.content, richTextViewOptions)}
